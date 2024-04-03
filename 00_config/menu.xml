@@ -4,7 +4,7 @@
 	<menu id="root-menu">
 		<item label="Run program...">
 			<action name="Execute">
-				<command>fuzzel</command>
+				<command>fuzzel --dpi-aware yes</command>
 			</action>
 		</item>
 		<item label="Terminal">

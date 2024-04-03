@@ -20,7 +20,7 @@
       <action name="Execute" command="terminator" />
     </keybind>
     <keybind key="W-X">
-      <action name="Execute" command="fuzzel" />
+      <action name="Execute" command="fuzzel --dpi-aware yes" />
     </keybind>
     <keybind key="W-Up">
       <action name="ToggleMaximize" />

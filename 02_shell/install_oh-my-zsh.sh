@@ -1,11 +1,6 @@
 #!/bin/bash
 
-function add_alias() {
-  alias="$1"
-  if ! grep -sq "$alias" $HOME/.zshaliases ; then
-    echo "$alias" >> $HOME/.zshaliases
-  fi
-}
+source ../common/aliases.sh
 
 sudo pacman -S --needed zsh zsh-completions
 if [[ -z $ZSH ]]; then
@@ -27,11 +22,8 @@ if [[ -z $ZSH ]]; then
     awk -v plugins="$plugins" -v bgnotify_func="${bgnotify_func}" -i inplace '{if ($0 ~ /^plugins=(.*)$/) print bgnotify_func "\nplugins=(" plugins ")"; else print $0}' $HOME/.zshrc
   fi
 
-  add_alias "alias l='ls -la'"
-  add_alias "alias ll='ls -la'"
-  add_alias "alias weather='curl wttr.in\?M'"
-  add_alias "alias distory='vim $HOME/.zsh_history'"
-  if ! grep -sq "source \$HOME/.zshaliases" $HOME/.zshrc ; then
-    echo "source \$HOME/.zshaliases" >> $HOME/.zshrc
-  fi
+  make_alias "alias l='ls -la'"
+  make_alias "alias ll='ls -la'"
+  make_alias "alias weather='curl wttr.in\?M'"
+  make_alias "alias distory='vim $HOME/.zsh_history'"
 fi

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ../common/aliases.sh
+
 sudo pacman -S --needed git diff-so-fancy
 
 echo ""
@@ -18,10 +20,4 @@ git config --global alias.cp cherry-pick
 git config --global alias.l "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(red)- %an%C(reset)%C(bold yellow)%d%C(reset)'"
 git config --global alias.l2 "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(red)- %an%C(reset)'"
 
-alias="alias gits='git status'"
-if ! grep -sq "$alias" $HOME/.zshaliases ; then
-    echo "${alias}" >> $HOME/.zshaliases
-fi
-if ! grep -sq "source \$HOME/.zshaliases" $HOME/.zshrc ; then
-    echo "source \$HOME/.zshaliases" >> $HOME/.zshrc
-fi
+make_alias "alias gits='git status'"

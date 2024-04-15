@@ -1,8 +1,10 @@
 #!/bin/bash
 source ../common/github.sh
+source ../common/cronjobs.sh
 
 mkdir -p $HOME/bin
 mkdir -p $HOME/.config
+
 
 # labwc
 alt1="Yes, install Xwayland"
@@ -92,6 +94,7 @@ sudo pacman -S --needed swaylock swayidle
 if [ ! -d $HOME/bin/chayang ]; then
     git clone https://git.sr.ht/\~emersion/chayang $HOME/bin/chayang
     cd $HOME/bin/chayang
+    add_cronjob_to_check_git_repository "$HOME/bin/chayang"
     meson setup build/
     ninja -C build/
     sudo cp build/chayang /usr/local/bin/
@@ -99,6 +102,7 @@ fi
 if [ ! -d $HOME/bin/wlopm ]; then
     git clone https://git.sr.ht/\~leon_plickat/wlopm $HOME/bin/wlopm
     cd $HOME/bin/wlopm
+    add_cronjob_to_check_git_repository "$HOME/bin/wlopm"
     make
     sudo make install
 fi
@@ -116,6 +120,7 @@ while [ $change -eq 1 ]; do
             sudo pacman -S --needed jq
             git clone https://git.sr.ht/\~emersion/wlr-randr $HOME/bin/wlr-randr
             cd $HOME/bin/wlr-randr
+            add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
             meson setup build/
             ninja -C build/
         fi
@@ -146,6 +151,7 @@ if [ "${res}" = "${alt1}" ]; then
     if [ ! -d $HOME/bin/libinput-config ]; then
         git clone https://gitlab.com/warningnonpotablewater/libinput-config.git $HOME/bin/libinput-config
         cd $HOME/bin/libinput-config
+        add_cronjob_to_check_git_repository "$HOME/bin/libinput-config"
         meson setup build/
         cd build
         ninja

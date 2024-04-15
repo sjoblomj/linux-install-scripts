@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -n "$(ls -A $HOME/.letters)" ]; then
+    for file in $HOME/.letters/*; do
+        if [ -f "$file" ]; then
+            cat "$file"
+            rm  "$file"
+            echo ""
+        fi
+    done
+fi

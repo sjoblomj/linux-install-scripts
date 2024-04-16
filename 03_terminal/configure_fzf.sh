@@ -1,7 +1,7 @@
 #!/bin/bash
+source ../common/cronjobs.sh
 
-mkdir -p $HOME/.config/fzf
-cp fzf-update.sh $HOME/.config/fzf
+add_cronjob_to_check_git_repository "$HOME/bin/fzf"
 
 if [ -f $HOME/.fzf.bash ] && [ ! -f $HOME/.fzf.zsh ]; then
     cp $HOME/.fzf.bash $HOME/.fzf.zsh
@@ -9,7 +9,4 @@ if [ -f $HOME/.fzf.bash ] && [ ! -f $HOME/.fzf.zsh ]; then
 fi
 if ! grep -sq ".fzf.zsh" $HOME/.zshrc ; then
     echo '[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh' >> $HOME/.zshrc
-fi
-if ! grep -sq "fzf-update.sh" $HOME/.zshrc ; then
-    echo 'source $HOME/.config/fzf/fzf-update.sh' >> $HOME/.zshrc
 fi

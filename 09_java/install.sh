@@ -1,6 +1,6 @@
 #!/bin/bash
-
 source ../common/aliases.sh
+source ../common/cronjobs.sh
 programs="$@"
 
 if [[ "$programs" =~ "mvntree" ]]; then
@@ -10,6 +10,7 @@ if [[ "$programs" =~ "mvntree" ]]; then
     if [ ! -d mvntree ]; then
         git clone https://github.com/sjoblomj/mvntree.git
         echo 'source $HOME/code/mvntree/.mvntree' >> $HOME/.zshrc
+        add_cronjob_to_check_git_repository "$HOME/code/mvntree"
     fi
     cd "$prevdir"
     programs=$(echo "${programs}" | sed "s/mvntree//g")

@@ -24,5 +24,5 @@ add_cronjob_to_check_git_repository() {
         echo "source \$HOME/bin/letters/empty_letterbox.sh" >> $HOME/.zshrc
     fi
 
-    (crontab -l 2>/dev/null; echo "0/2 * * * * $HOME/bin/check_git_for_updates.sh $DIR $COMPONENT") | crontab -
+    (crontab -l 2>/dev/null; echo "0 */2 * * * $HOME/bin/check_git_for_updates.sh $DIR $COMPONENT") | crontab -
 }

@@ -6,6 +6,6 @@ make_alias() {
         echo "$alias" >> $HOME/.zshaliases
     fi
     if ! grep -sq "source \$HOME/.zshaliases" $HOME/.zshrc ; then
-        echo "souce \$HOME/.zshaliases" >> $HOME/.zshrc
+        echo "source \$HOME/.zshaliases" >> $HOME/.zshrc
     fi
 }

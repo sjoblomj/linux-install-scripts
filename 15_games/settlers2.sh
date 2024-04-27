@@ -3,9 +3,12 @@
 if [ ! -d $HOME/games/settlers2 ]; then
     mkdir -p $HOME/games/settlers2/share/s25rttr/S2
 
+    uri="https://www.siedler25.org/index.php\?com\=dynamic\&mod\=2\&lang\=en\&PHPSESSID\=li5ljhjjcqeu02md0k5a1ivqhm"
     sudo pacman -S --needed unzip
     sudo pacman -S --needed sdl2 sdl2_mixer
-    url=$(curl -s https://www.siedler25.org/index.php\?com\=dynamic\&mod\=2\&lang\=en\&PHPSESSID\=li5ljhjjcqeu02md0k5a1ivqhm | awk 'BEGIN{Found_stable = 0}{if ($0 ~ "Current Stable Version") Found_stable = 1; if (Found_stable && $0 ~ "a href=\"https" && $0 ~ "linux") { gsub(/.*a href="/, "", $0); gsub(/".*/, "", $0); print $0; exit 0;}}')
+
+    curl -s "$uri" &> /dev/null # The page returns empty results if not run twice
+    url=$(curl -s "$uri" | awk 'BEGIN{Found_stable = 0}{if ($0 ~ "Current Stable Version") Found_stable = 1; if (Found_stable && $0 ~ "a href=\"https" && $0 ~ "linux") { gsub(/.*a href="/, "", $0); gsub(/".*/, "", $0); print $0; exit 0;}}')
     if [ -z "$url" ]; then
         echo "Failed to fetch URL to download from!"
         exit 1

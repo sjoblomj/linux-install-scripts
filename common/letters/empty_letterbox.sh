@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -n "$(ls -A $HOME/.letters)" ]; then
+if [ -n "$(ls -A $HOME/.letters)" ] && [ "$XDG_SESSION_TYPE" != "tty" ] ; then
     for file in $HOME/.letters/*; do
         if [ -f "$file" ]; then
             cat "$file"

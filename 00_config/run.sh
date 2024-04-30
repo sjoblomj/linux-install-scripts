@@ -103,8 +103,10 @@ if [ ! -d $HOME/bin/wlopm ]; then
     git clone https://git.sr.ht/\~leon_plickat/wlopm $HOME/bin/wlopm
     cd $HOME/bin/wlopm
     add_cronjob_to_check_git_repository "$HOME/bin/wlopm"
+    sed -i "s/install bash-completion/#install bash-completion/g" Makefile
     make
     sudo make install
+    sed -i "s/#install bash-completion/install bash-completion/g" Makefile
 fi
 
 

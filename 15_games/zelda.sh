@@ -13,7 +13,7 @@ if [ ! -d $HOME/bin/antimicrox ]; then
     sudo pacman -S --needed libxi libxtst libx11 # Are these needed for Wayland builds?
     cmake -DWITH_X11=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
     cmake --build .
-    sudo cmake install DESTDIR=/
+    sudo make install DESTDIR=/
     cd $prevdir
 fi
 

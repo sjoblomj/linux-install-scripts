@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Settlers II Return to the Roots
-Exec=sh -c 'cd $HOME/games/settlers2/bin; ./rttr.sh'
+Exec=sh -c 'cd $HOME/games/settlers2/bin; ./s25client'
 Terminal=false
 Type=Application
 Icon=settlers2

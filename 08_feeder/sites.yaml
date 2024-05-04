@@ -1,0 +1,309 @@
+sites:
+  - name: Settlers2.net
+    url:  "https://settlers2.net/rss.xml"
+    displayUrl: "https://settlers2.net/blog"
+    icon: "https://raw.githubusercontent.com/Merri/settlers2/v4/public/design/castle.png"
+    parser: rss
+    description: Fan site for the retro computer game Settlers II.
+    insertValues:
+      - user: Merri
+      - userPicture: "https://avatars.githubusercontent.com/u/976619?v=4"
+
+  - name: JetBrains Native Wayland Support
+    url:  "https://youtrack.jetbrains.com/issue/JBR-3206"
+    icon: "https://youtrack.jetbrains.com/static/apple-touch-icon-180x180.png"
+    parser: youtrack
+    description: Issue for when the JetBrains IDEs will get Wayland support.
+
+  - name: VTE Sixel Implementation
+    url:  "https://gitlab.gnome.org/GNOME/vte/-/issues/253"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/3/39/Gnomelogo-footprint.svg"
+    parser: gitlab
+    description: Issue for when GNOME VTE, upon which Terminator depends, will get Sixel support.
+
+  - name: Zelda3
+    url:  "https://github.com/snesrev/zelda3/commits/"
+    icon: "https://user-images.githubusercontent.com/114783946/193422264-36e59bac-68b4-437f-819d-ea292efa6466.png"
+    parser: github
+    description: Commit log of a re-implementation for Zelda - A Link to the Past.
+
+  - name: Zelda3 AppImage package
+    url:  "https://github.com/snesrev/zelda3/pull/248"
+    icon: "https://user-images.githubusercontent.com/114783946/193422264-36e59bac-68b4-437f-819d-ea292efa6466.png"
+    parser: github
+    description: Issue for adding proper support for desktop files for Zelda3. With it, the arch-install-scripts can be updated.
+
+  - name: AntiMicroX QT6 Task list
+    url:  "https://github.com/AntiMicroX/antimicrox/issues/446"
+    icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
+    parser: github
+    description: Issue for adding QT6 support to AntiMicroX. With it, the arch-install-scripts can be updated.
+
+  - name: AntiMicroX QT6 PR
+    url:  "https://github.com/AntiMicroX/antimicrox/pull/919"
+    icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
+    parser: github
+    description: PR for adding QT6 support to AntiMicroX. With it, the arch-install-scripts can be updated.
+
+  - name: AntiMicroX Releases
+    url:  "https://github.com/AntiMicroX/antimicrox/releases"
+    icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
+    parser: github
+    description: Releases for the gamepad mapper tool AntiMicroX.
+
+  - name: labwc Task switcher
+    url:  "https://github.com/labwc/labwc/issues/1341"
+    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
+    parser: github
+    description: Issue for fixing a bug in labwc, where Alt+Tab doesn't show all windows.
+
+  - name: labwc Task switcher fix PR
+    url:  "https://github.com/labwc/labwc/pull/1533"
+    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
+    parser: github
+    description: PR for fixing a bug in labwc, where Alt+Tab doesn't show all windows.
+
+  - name: labwc Releases
+    url:  "https://github.com/labwc/labwc/releases"
+    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
+    parser: github
+    description: Releases to the Wayland compositor labwc.
+
+  - name: Terminator Releases
+    url:  "https://github.com/gnome-terminator/terminator/releases"
+    icon: "https://avatars.githubusercontent.com/u/63008829?s=200&v=4"
+    parser: github
+    description: Releases to the terminal Terminator.
+
+  - name: ImHex Releases
+    url:  "https://github.com/WerWolv/ImHex/releases"
+    icon: "https://raw.githubusercontent.com/WerWolv/ImHex/cc8a1ccc8b90493ac5e71349cb8c2be804fb8ff9/resources/icon.svg"
+    parser: github
+    description: Releases to the hex editor ImHex.
+
+  - name: lximage-qt Releases
+    url:  "https://github.com/lxqt/lximage-qt/releases"
+    icon: "https://avatars.githubusercontent.com/u/32845505?s=200&v=4"
+    parser: github
+    description: Releases to the image viewer lximage-qt. With a new release, the arch-install-scripts can be updated.
+
+  - name: mark2epub footnotes PR
+    url:  "https://github.com/AlexPof/mark2epub/pull/3"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Epub_logo_color.svg"
+    parser: github
+    description: PR for adding footnotes support to mark2epub.
+
+  - name: GIMP 3.0.0 release
+    url:  "https://gitlab.gnome.org/GNOME/gimp/-/issues/10373"
+    icon: "https://raw.githubusercontent.com/GNOME/gimp/de8f7fd4b8e8711d9167bbdd27bd089a39a863b0/icons/Default/scalable/gimp-wilber.svg"
+    parser: gitlab
+    description: Issue for releasing Gimp 3.0.0 with Wayland support.
+
+  - name: Arch Linux News
+    url:  "https://archlinux.org/feeds/news/"
+    displayUrl: "https://archlinux.org/news/"
+    icon: "https://gitlab.archlinux.org/uploads/-/system/group/avatar/23/iconfinder_archlinux_386451.png"
+    parser: rss
+    description: News from the Linux distribution Arch Linux.
+
+  - name: Gimp News
+    url:  "https://www.gimp.org/feeds/rss.xml"
+    displayUrl: "https://www.gimp.org/news/"
+    icon: "https://raw.githubusercontent.com/GNOME/gimp/de8f7fd4b8e8711d9167bbdd27bd089a39a863b0/icons/Default/scalable/gimp-wilber.svg"
+    parser: rss
+    description: News from the Gimp project.
+
+  - name: Wait But Why
+    url:  "https://waitbutwhy.com/feed"
+    displayUrl: "https://waitbutwhy.com"
+    icon: "https://waitbutwhy.com/wp-content/uploads/2019/02/WBW-logo-vector-crop.jpg"
+    parser: rss
+    description: Blog dealing with subjects like human nature, AI and the universe.
+    insertValues:
+      - userPicture: "https://149909199.v2.pressablecdn.com/wp-content/uploads/2014/10/Tim.png"
+
+  - name: Phoronix
+    url:  "https://www.phoronix.com/rss.php"
+    displayUrl: "https://www.phoronix.com"
+    icon: "https://www.phoronix.com/android-chrome-192x192.png"
+    parser: rss
+    description: Technology website with Linux and open source news.
+    insertValues:
+      - user: Michael Larabel
+      - userPicture: "https://www.phoronix.com/assets/categories/michaellarabel.webp"
+    filters:
+      - filter: wayland
+      - or:
+        - filter: gimp
+      - or:
+        - filter: firefox
+      - or:
+        - filter: arch
+        - and:
+          - not:
+            - filter: march
+            - or:
+              - filter: architect
+            - or:
+              - filter: research
+
+  - name: Tiny Projects Blog
+    url:  "https://tinyprojects.dev/feed.xml"
+    displayUrl: "https://tinyprojects.dev/blog"
+    icon: "https://tinyprojects.dev/img/favicon/android-chrome-512x512.png"
+    parser: rss
+    description: Blog of Ben Stokes, who ran Tiny Projects, aimed at building and launching a number of small projects in succession.
+    insertValues:
+      - user: Ben Stokes
+      - userPicture: "https://future.com/wp-content/uploads/2022/06/headshot-2022-06-03-00.18.58-768x768.png"
+
+  - name: OpenStreetMap Blog
+    url:  "https://blog.openstreetmap.org/feed/"
+    displayUrl: "https://blog.openstreetmap.org"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/b/b0/Openstreetmap_logo.svg"
+    parser: rss
+    description: News from the mapping project OpenStreetMap.
+
+  - name: OpenRailwayMap Blog
+    url:  "https://blog.openrailwaymap.org/en.rss"
+    displayUrl: "https://blog.openrailwaymap.org"
+    icon: "https://raw.githubusercontent.com/OpenRailwayMap/OpenRailwayMap/970bf7e883da00fc5c65d640864fc22b6fe376b1/img/openrailwaymap.svg"
+    parser: rss
+    description: News from the railway mapping project OpenRailwayMap.
+
+  - name: Ultimate Hacking Keyboard Blog
+    url:  "https://ultimatehackingkeyboard.com/feed"
+    displayUrl: "https://ultimatehackingkeyboard.com/blog"
+    icon: "https://ultimatehackingkeyboard.com/wordpress/wp-content/uploads/2024/01/cropped-android-chrome-512x512-1-192x192.png"
+    parser: rss
+    description: News from keyboard maker Ultimate Hacking Keyboard.
+    insertValues:
+      - userPicture: "https://forum.ultimatehackingkeyboard.com/user_avatar/forum.ultimatehackingkeyboard.com/mlac/144/3_2.png"
+
+  - name: Keyboardio Blog
+    url:  "https://shop.keyboard.io/blogs/news.atom"
+    displayUrl: "https://shop.keyboard.io/blogs/news"
+    icon: "https://raw.githubusercontent.com/keyboardio/Kaleidoscope/master/docs/images/butterfly.png"
+    parser: atom
+    description: News from keyboard maker Keyboardio.
+
+  - name: Omtag Svensk Järnväg
+    url:  "https://omtagsvenskjarnvag.se/feed/"
+    displayUrl: "https://omtagsvenskjarnvag.se/nyheter-2/"
+    icon: "https://omtagsvenskjarnvag.se/wp-content/uploads/2023/09/cropped-faviconfav-192x192.png"
+    parser: rss
+    description: News from the Swedish railway site Omtag Svensk Järnväg.
+
+  - name: Järnvägar.nu
+    url:  "https://jarnvagar.nu/feed/"
+    displayUrl: "https://jarnvagar.nu/arkiv/"
+    icon: "https://jarnvagar.nu/wp-content/uploads/2022/12/logo.png"
+    parser: rss
+    description: News from the Swedish railway site Järnvägar.nu.
+
+  - name: Dagens Logistik - Infrastruktur
+    url:  "https://dagenslogistik.se/category/infrastruktur/feed/"
+    displayUrl: "https://dagenslogistik.se/category/infrastruktur/"
+    icon: "https://dagenslogistik.se/wp-content/uploads/2019/11/dagenslogistik_icon-300x300.png"
+    parser: rss
+    description: News from the Swedish logistics site Dagens Logistik - Infrastruktur.
+
+  - name: Low←Tech Magazine
+    url:  "https://solar.lowtechmagazine.com/posts/index.xml"
+    displayUrl: "https://solar.lowtechmagazine.com/archives/"
+    icon: "https://yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
+    parser: rss
+    description: Magazine exploring low-tech solutions to societal challenges.
+    insertValues:
+      - user: Kris De Decker
+      - userPicture: "https://i0.wp.com/joshuaspodek.com/wp-content/uploads/2022/12/KrisDeDecker.jpg"
+
+  - name: Marginalia Blog
+    url:  "https://www.marginalia.nu/log/index.xml"
+    displayUrl: "https://www.marginalia.nu/log/"
+    icon: "https://search.marginalia.nu/favicon.ico"
+    parser: rss
+    description: News from the indie search engine Marginalia.
+    insertValues:
+      - user: Viktor Löfgren
+      - userPicture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRltBHX69SuFkRdbx0wvjw2_yo3zSP12ZY54kHPap-5cQ&s"
+
+  - name: Marginalia Publicity
+    url:  "https://search.marginalia.nu/news.xml"
+    displayUrl: "https://search.marginalia.nu/"
+    icon: "https://search.marginalia.nu/favicon.ico"
+    parser: rss
+    description: Publicity news from the indie search engine Marginalia.
+
+  - name: Pine64 Community Blog
+    url:  "https://pine64.org/blog/index.xml"
+    displayUrl: "https://pine64.org/blog/"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/1/18/Pine64_logo.svg"
+    parser: rss
+    description: News from open hardware maker Pine64
+    insertValues:
+      - user: pine64
+      - userPicture: "https://upload.wikimedia.org/wikipedia/commons/1/18/Pine64_logo.svg"
+
+  - name: Reasons to be Cheerful
+    url:  "https://reasonstobecheerful.world/feed/"
+    displayUrl: "https://reasonstobecheerful.world/archives"
+    icon: "https://reasonstobecheerful.world/wp-content/uploads/2019/08/RTBC_Logo.svg"
+    parser: rss
+    description: Positive articles from the news site Reasons to be Cheerful.
+
+  - name: Stevan's notes
+    url: "https://stevana.github.io/rss.xml"
+    displayUrl: "https://stevana.github.io"
+    icon: "https://dfoto.se/v1/image/5809d73e8a2b8e678a496111/preview"
+    parser: rss
+    description: Computer articles from my friend Stevan.
+    insertValues:
+      - user: Stevan
+      - userPicture: "https://dfoto.se/v1/image/5809d73e8a2b8e678a496111/preview"
+
+  - name: Fridays For Future
+    url:  "https://fridaysforfuture.org/feed/"
+    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
+    displayUrl: "https://fridaysforfuture.org/"
+    parser: rss
+    description: News from the climate action group Fridays For Future.
+
+  - name: Fridays For Future Sweden
+    url:  "https://fridaysforfuture.se/feed/"
+    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
+    displayUrl: "https://fridaysforfuture.se/nyheter/"
+    parser: rss
+    description: News from the Swedish branch of the climate action group Fridays For Future.
+
+  - name: Marduk
+    url:  "https://marduk.nu/feed/"
+    icon: "https://www.hell-is-open.de/gifs/bandlogos/marduk.jpg"
+    displayUrl: "https://marduk.nu/"
+    parser: rss
+    description: News from the black metal band Marduk.
+    insertValues:
+      - userPicture: "https://marduk.nu/wp-content/themes/mardus/images/scroll-top.png"
+
+  - name: Wardruna
+    url:  "https://wardruna.com/news/"
+    icon: "https://sropr.com/wp-content/uploads/2020/02/logo_wardruna_symbol-web.png"
+    parser: wardruna
+    description: News from the nordic folk band Wardruna.
+    insertValues:
+      - user: Wardruna
+      - userPicture: "https://i.pinimg.com/originals/7e/36/e7/7e36e7d843fc8d095349a7aff6b4f770.jpg"
+
+  - name: ShadowFlare's Realm
+    url:  "https://sfsrealm.hopto.org/"
+    icon: "https://sfsrealm.hopto.org/favicon.ico"
+    parser: shadowflare
+    description: News from ShadowFlare, who makes tools for opening data files for Blizzard games.
+    insertValues:
+      - userPicture: "https://sfsrealm.hopto.org/images/error126.jpg"
+
+  - name: Stormcoast-Fortress
+    url:  "http://www.stormcoast-fortress.net/"
+    icon: "https://static.freedownloadmanager.org/icon/32/1252/1252584.png"
+    parser: stormcoast-fortress
+    description: Primarily contains releases for SCMDraft, a map maker for StarCraft.

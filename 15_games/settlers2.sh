@@ -1,7 +1,7 @@
 #!/bin/bash
 
-prevdir=$(pwd)
 if [ ! -d $HOME/games/settlers2 ]; then
+    prevdir=$(pwd)
 
     # Checkout and build RTTR
     sudo pacman -S --needed unzip
@@ -31,6 +31,7 @@ if [ ! -d $HOME/games/settlers2 ]; then
     cp -r share libexec lib $HOME/games/settlers2
 
     # Place Settlers II game data into build
+    cd "$prevdir" || exit 1
     echo ""
     echo "Enter password to unzip Settlers II"
     unzip s2g.zip -d $HOME/games/settlers2/share/s25rttr/S2
@@ -42,4 +43,3 @@ if [ ! -d $HOME/games/settlers2 ]; then
     cp settlers2.svg $HOME/.local/share/icons/hicolor/scalable/apps
     sudo cp settlers2.desktop /usr/share/applications/s25client.desktop
 fi
-cd "$prevdir"

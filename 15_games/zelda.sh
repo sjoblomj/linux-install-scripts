@@ -1,5 +1,4 @@
 #!/bin/bash
-
 prevdir=$(pwd)
 
 if [ ! -d $HOME/bin/antimicrox ]; then
@@ -18,7 +17,6 @@ if [ ! -d $HOME/bin/antimicrox ]; then
 fi
 
 if [ ! -d $HOME/games/zelda-a_link_to_the_past ]; then
-    mkdir -p $HOME/games/zelda-a_link_to_the_past
     git clone https://github.com/snesrev/zelda3 $HOME/games/zelda-a_link_to_the_past/zelda3
 
     sudo pacman -S --needed unzip

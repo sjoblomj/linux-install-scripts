@@ -1,11 +1,9 @@
 #!/bin/bash
 
-mkdir -p $HOME/bin
 prevdir=$(pwd)
-cd $HOME/bin || exit 1
-if [ ! -d ImHex ]; then
-    git clone https://github.com/WerWolv/ImHex --recurse-submodules
-    cd ImHex || exit 1
+if [ ! -d $HOME/bin/ImHex ]; then
+    git clone https://github.com/WerWolv/ImHex --recurse-submodules $HOME/bin/ImHex
+    cd $HOME/bin/ImHex || exit 1
 
     sudo pacman -S --needed ccache
     sudo ./dist/get_deps_archlinux.sh

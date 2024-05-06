@@ -1,10 +1,9 @@
 #!/bin/bash
+prevdir=$(pwd)
 
-prev_dir=$(pwd)
 sudo pacman -S --needed git base-devel
-mkdir -p $HOME/bin
-cd $HOME/bin
-git clone https://aur.archlinux.org/slack-desktop.git
-cd slack-desktop
+git clone https://aur.archlinux.org/slack-desktop.git $HOME/bin/slack-desktop
+
+cd $HOME/bin/slack-desktop || exit 1
 makepkg -sir
-cd "${prev_dir}"
+cd "$prevdir" || exit 1

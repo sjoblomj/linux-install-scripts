@@ -8,9 +8,8 @@ if [ ! -d $HOME/bin/antimicrox ]; then
     git clone https://github.com/AntiMicroX/antimicrox.git $HOME/bin/antimicrox
     mkdir -p $HOME/bin/antimicrox/build
     cd $HOME/bin/antimicrox/build
-    sudo pacman -S --needed gcc cmake extra-cmake-modules qt5-tools sdl2 itstool gettext
-    sudo pacman -S --needed libxi libxtst libx11 # Are these needed for Wayland builds?
-    cmake -DWITH_X11=OFF -DCMAKE_INSTALL_PREFIX=/usr ..
+    sudo pacman -S --needed gcc cmake extra-cmake-modules qt6-tools sdl2 itstool gettext
+    cmake -DWITH_X11=OFF -DUSE_QT6_BY_DEFAULT=ON -DCMAKE_INSTALL_PREFIX=/usr ..
     cmake --build .
     sudo make install DESTDIR=/
     cd $prevdir

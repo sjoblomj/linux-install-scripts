@@ -4,8 +4,8 @@ if [ ! -d $HOME/games/settlers2 ]; then
     prevdir=$(pwd)
 
     # Checkout and build RTTR
-    sudo pacman -S --needed unzip
-    sudo pacman -S --needed sdl2 sdl2_mixer boost
+    sudo pacman -S --needed git unzip jq cmake
+    sudo pacman -S --needed sdl2 sdl2_mixer boost miniupnpc
 
     git clone --recursive https://github.com/Return-To-The-Roots/s25client.git $HOME/bin/s25client
     cd $HOME/bin/s25client || exit 1

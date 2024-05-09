@@ -11,7 +11,7 @@ if [ "$selections" != "" ]; then
         curl https://upload.wikimedia.org/wikipedia/commons/e/e6/VLC_Icon.svg -o $HOME/.local/share/icons/hicolor/scalable/apps/vlc.svg
     fi
     if [[ "$selections" =~ "lximage-qt" ]]; then
-        sudo pacman -S --needed qt5-wayland qt5-imageformats kimageformats5
+        sudo pacman -S --needed qt6-wayland qt6-imageformats kimageformats
         sudo pacman -S --needed deepin-icon-theme
         mkdir  -p $HOME/.config/lximage-qt
         if [ ! -f $HOME/.config/lximage-qt/settings.conf ]; then

@@ -24,6 +24,6 @@ if [ ! -d $HOME/bin/ImHex ]; then
     sudo make -j 4 install
 
     mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps/
-    cp ../resources/icon.svg $HOME/.local/share/icons/hicolor/scalable/apps/imhex.svg
+    curl https://raw.githubusercontent.com/WerWolv/ImHex/5f75c8684fed5b749c9331fad7f07872c8f82c31/resources/icon.svg -o $HOME/.local/share/icons/hicolor/scalable/apps/imhex.svg
 fi
 cd "$prevdir" || exit 1

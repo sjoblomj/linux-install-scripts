@@ -21,6 +21,12 @@ sites:
     parser: gitlab
     description: Issue for when GNOME VTE, upon which Terminator depends, will get Sixel support.
 
+  - name: devilutionX Releases
+    url:  "https://github.com/diasurgical/devilutionX/releases/"
+    icon: "https://avatars.githubusercontent.com/u/40645014"
+    parser: github
+    description: Releases for the Diablo I clone devilutionX
+
   - name: Zelda3
     url:  "https://github.com/snesrev/zelda3/commits/"
     icon: "https://user-images.githubusercontent.com/114783946/193422264-36e59bac-68b4-437f-819d-ea292efa6466.png"
@@ -33,35 +39,11 @@ sites:
     parser: github
     description: Issue for adding proper support for desktop files for Zelda3. With it, the arch-install-scripts can be updated.
 
-  - name: AntiMicroX QT6 Task list
-    url:  "https://github.com/AntiMicroX/antimicrox/issues/446"
-    icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
-    parser: github
-    description: Issue for adding QT6 support to AntiMicroX. With it, the arch-install-scripts can be updated.
-
-  - name: AntiMicroX QT6 PR
-    url:  "https://github.com/AntiMicroX/antimicrox/pull/919"
-    icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
-    parser: github
-    description: PR for adding QT6 support to AntiMicroX. With it, the arch-install-scripts can be updated.
-
   - name: AntiMicroX Releases
     url:  "https://github.com/AntiMicroX/antimicrox/releases"
     icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
     parser: github
     description: Releases for the gamepad mapper tool AntiMicroX.
-
-  - name: labwc Task switcher
-    url:  "https://github.com/labwc/labwc/issues/1341"
-    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
-    parser: github
-    description: Issue for fixing a bug in labwc, where Alt+Tab doesn't show all windows.
-
-  - name: labwc Task switcher fix PR
-    url:  "https://github.com/labwc/labwc/pull/1533"
-    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
-    parser: github
-    description: PR for fixing a bug in labwc, where Alt+Tab doesn't show all windows.
 
   - name: labwc Releases
     url:  "https://github.com/labwc/labwc/releases"
@@ -80,12 +62,6 @@ sites:
     icon: "https://raw.githubusercontent.com/WerWolv/ImHex/cc8a1ccc8b90493ac5e71349cb8c2be804fb8ff9/resources/icon.svg"
     parser: github
     description: Releases to the hex editor ImHex.
-
-  - name: lximage-qt Releases
-    url:  "https://github.com/lxqt/lximage-qt/releases"
-    icon: "https://avatars.githubusercontent.com/u/32845505?s=200&v=4"
-    parser: github
-    description: Releases to the image viewer lximage-qt. With a new release, the arch-install-scripts can be updated.
 
   - name: mark2epub footnotes PR
     url:  "https://github.com/AlexPof/mark2epub/pull/3"
@@ -251,6 +227,14 @@ sites:
     icon: "https://reasonstobecheerful.world/wp-content/uploads/2019/08/RTBC_Logo.svg"
     parser: rss
     description: Positive articles from the news site Reasons to be Cheerful.
+
+  - name: Simon Ser's blog
+    url: "https://emersion.fr/blog/atom.xml"
+    icon: "https://secure.gravatar.com/avatar/a4b5ba20f0938e11b29abe2f55aac75b57342094a5dd5702d055c34d910b1a6c?s=384&d=identicon"
+    parser: atom
+    description: Blog from open source developer Simon Ser.
+    insertValues:
+      - userPicture: "https://archive.fosdem.org/2022/schedule/speaker/simon_ser/bdc5af365d9ee33f0111c95109d85a72d5fbbaac52f76de5c1195c6c2c83ff5b.png"
 
   - name: Stevan's notes
     url: "https://stevana.github.io/rss.xml"

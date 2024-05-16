@@ -1,9 +1,13 @@
 #!/bin/bash
+confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
+datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 prevdir=$(pwd)
 
 if [ ! -d $HOME/bin/antimicrox ]; then
-    mkdir -p $HOME/.config/antimicrox
-    cp gamepad.joystick.amgp antimicrox_settings.ini $HOME/.config/antimicrox
+    mkdir -p "$confdir"/antimicrox
+    cp gamepad.joystick.amgp antimicrox_settings.ini "$confdir"/antimicrox
+    sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/antimicrox/antimicrox_settings.ini
 
     git clone https://github.com/AntiMicroX/antimicrox.git $HOME/bin/antimicrox
     mkdir -p $HOME/bin/antimicrox/build
@@ -24,8 +28,8 @@ if [ ! -d $HOME/games/zelda-a_link_to_the_past ]; then
     unzip zelda3.zip -d $HOME/games/zelda-a_link_to_the_past/zelda3
 
     # Copy desktop file and icon. This would be redundant if https://github.com/snesrev/zelda3/pull/248 or similar gets merged
-    mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps
-    cp zelda3.svg $HOME/.local/share/icons/hicolor/scalable/apps
+    mkdir -p "$datadir"/icons/hicolor/scalable/apps
+    cp zelda3.svg "$datadir"/icons/hicolor/scalable/apps
     sudo curl https://raw.githubusercontent.com/snesrev/zelda3/f5b19ef9dfdf9de6d07b2db8114c9862dcb48c26/platform/appimage/zelda3.desktop -o /usr/share/applications/zelda3.desktop
     sudo sed -iE "s|^Exec=.*|Exec=sh -c 'cd $HOME/games/zelda-a_link_to_the_past/zelda3; ./zelda3'|" /usr/share/applications/zelda3.desktop
 

@@ -1,8 +1,9 @@
 #!/bin/bash
+confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
 titleA="Add more locales? (Select with tab)"
 titleC="Configure locale for calendar?"
-waybarConfigPath="$HOME/.config/waybar/config"
+waybarConfigPath="$confdir/waybar/config"
 
 selection=$(cat /etc/locale.gen | grep -Po "^#\K\S*" | fzf --multi --layout=reverse --margin=4 --border --border-label="$titleA")
 

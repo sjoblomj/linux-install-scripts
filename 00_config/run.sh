@@ -2,8 +2,11 @@
 source ../common/github.sh
 source ../common/cronjobs.sh
 
+confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
+datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 mkdir -p $HOME/bin
-mkdir -p $HOME/.config
+mkdir -p "$confdir"
 
 
 # labwc
@@ -31,18 +34,19 @@ labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc"
 cd "$labwc_path"
 meson setup "${xwayland}" build/
 meson compile -C build/
-mkdir -p $HOME/.config/labwc
+mkdir -p "$confdir"/labwc
 cd $HOME/code/arch-install-scripts/00_config
-cp autostart environment menu.xml rc.xml themerc-override $HOME/.config/labwc
+cp autostart environment menu.xml rc.xml themerc-override "$confdir"/labwc
 cp .zprofile $HOME/
 sed -i "s|./bin/labwc/build/labwc|$labwc_path/build/labwc|" $HOME/.zprofile
+sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
 
 
 # Status bar
 sudo pacman -S --needed waybar
-mkdir -p $HOME/.config/waybar
-cp waybar_config $HOME/.config/waybar/config
-cp waybar_style.css $HOME/.config/waybar/style.css
+mkdir -p "$confdir"/waybar
+cp waybar_config "$confdir"/waybar/config
+cp waybar_style.css "$confdir"/waybar/style.css
 
 
 # Screen brightness control
@@ -52,8 +56,8 @@ sudo pacman -S --needed brightnessctl
 # Volume settings
 sudo pacman -S --needed curl
 sudo pacman -S --needed pavucontrol
-mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps
-curl https://upload.wikimedia.org/wikipedia/commons/4/44/Gnome-multimedia-volume-control.svg -o $HOME/.local/share/icons/hicolor/scalable/apps/multimedia-volume-control.svg
+mkdir -p "$datadir"/icons/hicolor/scalable/apps
+curl https://upload.wikimedia.org/wikipedia/commons/4/44/Gnome-multimedia-volume-control.svg -o "$datadir"/icons/hicolor/scalable/apps/multimedia-volume-control.svg
 
 
 # Locale for calendar
@@ -62,13 +66,13 @@ curl https://upload.wikimedia.org/wikipedia/commons/4/44/Gnome-multimedia-volume
 
 # Application launcher
 sudo pacman -S --needed fuzzel
-mkdir -p $HOME/.config/fuzzel
-cp fuzzel_config $HOME/.config/fuzzel/fuzzel.ini
+mkdir -p "$confdir"/fuzzel
+cp fuzzel_config "$confdir"/fuzzel/fuzzel.ini
 
 
 # Wallpaper
 sudo pacman -S --needed swaybg
-curl https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Expl0393_-_Flickr_-_NOAA_Photo_Library.jpg/800px-Expl0393_-_Flickr_-_NOAA_Photo_Library.jpg -o $HOME/.config/background.jpg
+curl https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Expl0393_-_Flickr_-_NOAA_Photo_Library.jpg/800px-Expl0393_-_Flickr_-_NOAA_Photo_Library.jpg -o "$confdir"/background.jpg
 
 
 # Extra fonts
@@ -85,8 +89,8 @@ sudo pacman -S --needed grim slurp swappy
 
 # Notifications
 sudo pacman -S --needed mako
-mkdir -p $HOME/.config/mako
-cp mako_config $HOME/.config/mako/config
+mkdir -p "$confdir"/mako
+cp mako_config "$confdir"/mako/config
 
 
 # Screen locking

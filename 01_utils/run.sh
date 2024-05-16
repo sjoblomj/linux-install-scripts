@@ -1,4 +1,7 @@
 #!/bin/bash
+confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
+datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
+
 preview_dir="programs/"
 title="Choose programs to install (Select with Tab)"
 selections=$(ls "$preview_dir" | fzf --multi --layout=reverse --margin=4 --border --border-label="${title}" --preview "cat ${preview_dir}{}" --preview-window right:wrap)
@@ -7,16 +10,16 @@ if [ "$selections" != "" ]; then
     sudo pacman -S --needed $selections
     if [[ "$selections" =~ "vlc" ]]; then
         sudo pacman -S --needed qt5-wayland
-        mkdir -p $HOME.local/share/icons/hicolor/scalable/apps
-        curl https://upload.wikimedia.org/wikipedia/commons/e/e6/VLC_Icon.svg -o $HOME/.local/share/icons/hicolor/scalable/apps/vlc.svg
+        mkdir -p "$datadir"/icons/hicolor/scalable/apps
+        curl https://upload.wikimedia.org/wikipedia/commons/e/e6/VLC_Icon.svg -o "$datadir"/icons/hicolor/scalable/apps/vlc.svg
     fi
     if [[ "$selections" =~ "lximage-qt" ]]; then
         sudo pacman -S --needed qt6-wayland qt6-imageformats kimageformats
         sudo pacman -S --needed deepin-icon-theme
-        mkdir  -p $HOME/.config/lximage-qt
-        if [ ! -f $HOME/.config/lximage-qt/settings.conf ]; then
-            echo "[General]" >> $HOME/.config/lximage-qt/settings.conf
-            echo "fallbackIconTheme=vintage" >> $HOME/.config/lximage-qt/settings.conf
+        mkdir  -p "$confdir"/lximage-qt
+        if [ ! -f "$confdir"/lximage-qt/settings.conf ]; then
+            echo "[General]" >> "$confdir"/lximage-qt/settings.conf
+            echo "fallbackIconTheme=vintage" >> "$confdir"/lximage-qt/settings.conf
         fi
     fi
     if [[ "$selections" =~ "evince" ]]; then

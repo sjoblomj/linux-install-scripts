@@ -4,10 +4,32 @@
     <keyboard-shortcut first-keystroke="ctrl f4" />
     <keyboard-shortcut first-keystroke="ctrl w" />
   </action>
+  <action id="CompareClipboardWithSelection">
+    <keyboard-shortcut first-keystroke="ctrl alt c" />
+  </action>
   <action id="ContextHelp" />
   <action id="Find">
     <keyboard-shortcut first-keystroke="ctrl #10000d6" />
   </action>
+  <action id="IntroduceConstant" />
+  <action id="MoveElementRight" />
+  <action id="TodoViewGroupByFlattenPackage" />
   <action id="UpdateRunningApplication" />
   <action id="UsageFiltering.WriteAccess" />
+  <action id="copilot.applyInlaysNextLine">
+    <keyboard-shortcut first-keystroke="shift alt right" />
+  </action>
+  <action id="copilot.applyInlaysNextWord">
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
+  <action id="copilot.cycleNextInlays">
+    <keyboard-shortcut first-keystroke="alt period" />
+  </action>
+  <action id="copilot.cyclePrevInlays">
+    <keyboard-shortcut first-keystroke="alt comma" />
+  </action>
+  <action id="copilot.requestCompletions">
+    <keyboard-shortcut first-keystroke="alt back_slash" />
+    <keyboard-shortcut first-keystroke="alt minus" />
+  </action>
 </keymap>

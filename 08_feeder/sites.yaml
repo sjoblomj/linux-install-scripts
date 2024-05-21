@@ -110,6 +110,7 @@ sites:
     parser: atom
     description: Blog from open source developer Simon Ser.
     insertValues:
+      - user: Simon Ser
       - userPicture: "https://archive.fosdem.org/2022/schedule/speaker/simon_ser/bdc5af365d9ee33f0111c95109d85a72d5fbbaac52f76de5c1195c6c2c83ff5b.png"
 
   - name: Stevan's notes
@@ -162,16 +163,6 @@ sites:
       - user: pine64
       - userPicture: "https://upload.wikimedia.org/wikipedia/commons/1/18/Pine64_logo.svg"
 
-  - name: Low←Tech Magazine
-    url:  "https://solar.lowtechmagazine.com/posts/index.xml"
-    displayUrl: "https://solar.lowtechmagazine.com/archives/"
-    icon: "https://yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
-    parser: rss
-    description: Magazine exploring low-tech solutions to societal challenges.
-    insertValues:
-      - user: Kris De Decker
-      - userPicture: "https://i0.wp.com/joshuaspodek.com/wp-content/uploads/2022/12/KrisDeDecker.jpg"
-
   - name: Wait But Why
     url:  "https://waitbutwhy.com/feed"
     displayUrl: "https://waitbutwhy.com"
@@ -190,6 +181,16 @@ sites:
     insertValues:
       - user: Ben Stokes
       - userPicture: "https://future.com/wp-content/uploads/2022/06/headshot-2022-06-03-00.18.58-768x768.png"
+
+  - name: Low←Tech Magazine
+    url:  "https://solar.lowtechmagazine.com/posts/index.xml"
+    displayUrl: "https://solar.lowtechmagazine.com/archives/"
+    icon: "https://yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
+    parser: rss
+    description: Magazine exploring low-tech solutions to societal challenges.
+    insertValues:
+      - user: Kris De Decker
+      - userPicture: "https://i0.wp.com/joshuaspodek.com/wp-content/uploads/2022/12/KrisDeDecker.jpg"
 
   - name: Reasons to be Cheerful
     url:  "https://reasonstobecheerful.world/feed/"

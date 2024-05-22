@@ -192,6 +192,13 @@ sites:
       - user: Kris De Decker
       - userPicture: "https://i0.wp.com/joshuaspodek.com/wp-content/uploads/2022/12/KrisDeDecker.jpg"
 
+  - name: The Progress Playbook
+    url:  "https://theprogressplaybook.com/feed/"
+    displayUrl: "https://theprogressplaybook.com/"
+    icon: "https://theprogressplaybook.com/wp-content/uploads/2023/08/Frame-2.png"
+    parser: rss
+    description: Magazine about sustainable development
+
   - name: Reasons to be Cheerful
     url:  "https://reasonstobecheerful.world/feed/"
     displayUrl: "https://reasonstobecheerful.world/archives"

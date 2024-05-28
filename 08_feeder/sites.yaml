@@ -48,6 +48,16 @@ sites:
     parser: rss
     description: News from the Gimp project.
 
+  - name: Inkscape News
+    url:  "https://inkscape.org/*membership/blog/feed/"
+    displayUrl: "https://inkscape.org/*membership/blog/"
+    icon: "https://media.inkscape.org/static/images/inkscape-logo.svg"
+    parser: rss
+    description: Development news from vector graphics editor Inkscape.
+    insertValues:
+      - user: Inkscape Team
+      - userPicture: "https://media.inkscape.org/static/images/inkscape-logo.svg"
+
   - name: wlopm commits
     url:  "https://git.sr.ht/~leon_plickat/wlopm/log/master/rss.xml"
     displayUrl: "https://git.sr.ht/~leon_plickat/wlopm/log"

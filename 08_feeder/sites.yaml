@@ -1,7 +1,7 @@
 sites:
   - name: JetBrains Native Wayland Support
     url:  "https://youtrack.jetbrains.com/issue/JBR-3206"
-    icon: "https://youtrack.jetbrains.com/static/apple-touch-icon-180x180.png"
+    icon: "https://resources.jetbrains.com/storage/products/company/brand/logos/YouTrack_icon.svg"
     parser: youtrack
     description: Issue for when the JetBrains IDEs will get Wayland support.
 

@@ -29,12 +29,6 @@ sites:
     parser: github
     description: Releases to the hex editor ImHex.
 
-  - name: mark2epub footnotes PR
-    url:  "https://github.com/AlexPof/mark2epub/pull/3"
-    icon: "https://upload.wikimedia.org/wikipedia/commons/f/f2/Epub_logo_color.svg"
-    parser: github
-    description: PR for adding footnotes support to mark2epub.
-
   - name: GIMP 3.0.0 release
     url:  "https://gitlab.gnome.org/GNOME/gimp/-/issues/10373"
     icon: "https://raw.githubusercontent.com/GNOME/gimp/de8f7fd4b8e8711d9167bbdd27bd089a39a863b0/icons/Default/scalable/gimp-wilber.svg"

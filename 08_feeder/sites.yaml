@@ -29,6 +29,12 @@ sites:
     parser: github
     description: Releases to the hex editor ImHex.
 
+  - name: default-icon-theme Type=Scalable
+    url:  "https://gitlab.freedesktop.org/xdg/default-icon-theme/-/issues/27"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Freedesktop-logo-for-template.svg"
+    parser: gitlab
+    description: Question to freedesktop.org regarding Type=Scalable
+
   - name: GIMP 3.0.0 release
     url:  "https://gitlab.gnome.org/GNOME/gimp/-/issues/10373"
     icon: "https://raw.githubusercontent.com/GNOME/gimp/de8f7fd4b8e8711d9167bbdd27bd089a39a863b0/icons/Default/scalable/gimp-wilber.svg"

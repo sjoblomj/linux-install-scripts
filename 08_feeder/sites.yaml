@@ -93,6 +93,8 @@ sites:
           - not:
             - filter: march
             - or:
+              - filter: AArch64
+            - or:
               - filter: architect
             - or:
               - filter: research

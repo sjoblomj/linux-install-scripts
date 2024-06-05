@@ -5,7 +5,7 @@ source ../common/cronjobs.sh
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 
-mkdir -p $HOME/bin
+mkdir -p "$HOME"/bin
 mkdir -p "$confdir"
 
 
@@ -31,14 +31,14 @@ sudo pacman -S --needed polkit
 
 labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc")
 
-cd "$labwc_path"
+cd "$labwc_path" || exit 1
 meson setup "${xwayland}" build/
 meson compile -C build/
 mkdir -p "$confdir"/labwc
-cd $HOME/code/arch-install-scripts/00_config
+cd "$HOME"/code/arch-install-scripts/00_config || exit 1
 cp autostart environment menu.xml rc.xml themerc-override "$confdir"/labwc
-cp .zprofile $HOME/
-sed -i "s|./bin/labwc/build/labwc|$labwc_path/build/labwc|" $HOME/.zprofile
+cp .zprofile "$HOME"/
+sed -i "s|./bin/labwc/build/labwc|$labwc_path/build/labwc|" "$HOME"/.zprofile
 sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
 
 
@@ -95,18 +95,18 @@ cp mako_config "$confdir"/mako/config
 
 # Screen locking
 sudo pacman -S --needed swaylock swayidle
-if [ ! -d $HOME/bin/chayang ]; then
-    git clone https://git.sr.ht/\~emersion/chayang $HOME/bin/chayang
-    cd $HOME/bin/chayang
-    add_cronjob_to_check_git_repository "$HOME/bin/chayang"
+if [ ! -d "$HOME"/bin/chayang ]; then
+    git clone https://git.sr.ht/\~emersion/chayang "$HOME"/bin/chayang
+    cd "$HOME"/bin/chayang || exit 1
+    add_cronjob_to_check_git_repository "$HOME"/bin/chayang
     meson setup build/
     ninja -C build/
     sudo cp build/chayang /usr/local/bin/
 fi
-if [ ! -d $HOME/bin/wlopm ]; then
-    git clone https://git.sr.ht/\~leon_plickat/wlopm $HOME/bin/wlopm
-    cd $HOME/bin/wlopm
-    add_cronjob_to_check_git_repository "$HOME/bin/wlopm"
+if [ ! -d "$HOME"/bin/wlopm ]; then
+    git clone https://git.sr.ht/\~leon_plickat/wlopm "$HOME"/bin/wlopm
+    cd "$HOME"/bin/wlopm || exit 1
+    add_cronjob_to_check_git_repository "$HOME"/bin/wlopm
     sed -i "s/install bash-completion/#install bash-completion/g" Makefile
     make
     sudo make install
@@ -122,10 +122,10 @@ while [ $change -eq 1 ]; do
     alt2="No, keep current screen resolution"
     res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
     if [ "${res}" = "${alt1}" ]; then
-        if [ ! -d $HOME/bin/wlr-randr ]; then
+        if [ ! -d "$HOME"/bin/wlr-randr ]; then
             sudo pacman -S --needed jq
-            git clone https://git.sr.ht/\~emersion/wlr-randr $HOME/bin/wlr-randr
-            cd $HOME/bin/wlr-randr
+            git clone https://git.sr.ht/\~emersion/wlr-randr "$HOME"/bin/wlr-randr
+            cd "$HOME"/bin/wlr-randr || exit 1
             add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
             meson setup build/
             ninja -C build/
@@ -139,11 +139,11 @@ while [ $change -eq 1 ]; do
     fi
 done
 if [[ -n "$cmd" ]]; then
-    echo "" >> $HOME/.zprofile
-    echo "# Set scale factor after startup" >> $HOME/.zprofile
-    echo "startuptime=\$(date +%s)" >> $HOME/.zprofile
-    echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done" >> $HOME/.zprofile
-    echo "$cmd" >> $HOME/.zprofile
+    echo "" >> "$HOME"/.zprofile
+    echo "# Set scale factor after startup" >> "$HOME"/.zprofile
+    echo "startuptime=\$(date +%s)" >> "$HOME"/.zprofile
+    echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done" >> "$HOME"/.zprofile
+    echo "$cmd" >> "$HOME"/.zprofile
 fi
 
 
@@ -154,12 +154,12 @@ res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="
 Note that this will change the mouse speed for *all devices*.
 For this setting to take effect, a re-login must be performed.')
 if [ "${res}" = "${alt1}" ]; then
-    if [ ! -d $HOME/bin/libinput-config ]; then
-        git clone https://gitlab.com/warningnonpotablewater/libinput-config.git $HOME/bin/libinput-config
-        cd $HOME/bin/libinput-config
-        add_cronjob_to_check_git_repository "$HOME/bin/libinput-config"
+    if [ ! -d "$HOME"/bin/libinput-config ]; then
+        git clone https://gitlab.com/warningnonpotablewater/libinput-config.git "$HOME"/bin/libinput-config
+        cd "$HOME"/bin/libinput-config || exit 1
+        add_cronjob_to_check_git_repository "$HOME"/bin/libinput-config
         meson setup build/
-        cd build
+        cd build || exit 1
         ninja
         sudo ninja install
     fi

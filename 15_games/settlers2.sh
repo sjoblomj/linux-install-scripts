@@ -6,6 +6,7 @@ if [ ! -d $HOME/games/settlers2 ]; then
     # Checkout and build RTTR
     sudo pacman -S --needed git unzip jq cmake
     sudo pacman -S --needed sdl2 sdl2_mixer boost miniupnpc
+    sudo ln -s /usr/lib/libminiupnpc.so.18 /usr/lib/libminiupnpc.so.17
 
     git clone --recursive https://github.com/Return-To-The-Roots/s25client.git $HOME/bin/s25client
     cd $HOME/bin/s25client || exit 1

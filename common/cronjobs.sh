@@ -9,13 +9,15 @@ add_cronjob_to_check_git_repository() {
     sudo pacman -S --needed cronie
     sudo systemctl enable cronie.service
     sudo systemctl start  cronie.service
-    mkdir -p $HOME/.letters
-    if [ ! -d $HOME/bin/letters ]; then
-        mkdir -p $HOME/bin
-        cp -r $SCRIPT_DIR/letters $HOME/bin
-    fi
+
+    mkdir -p $HOME/bin
     if [ ! -f $HOME/bin/check_git_for_updates.sh ]; then
         cp $SCRIPT_DIR/check_git_for_updates.sh $HOME/bin/check_git_for_updates.sh
+    fi
+
+    mkdir -p $HOME/.letters
+    if [ ! -d $HOME/bin/letters ]; then
+        cp -r $SCRIPT_DIR/letters $HOME/bin
     fi
     if ! grep -sq "source \$HOME/bin/letters/empty_letterbox.sh" $HOME/.bashrc ; then
         echo "source \$HOME/bin/letters/empty_letterbox.sh" >> $HOME/.bashrc

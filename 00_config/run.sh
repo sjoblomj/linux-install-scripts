@@ -42,6 +42,12 @@ sed -i "s|./bin/labwc/build/labwc|${labwc_path// /\\\\ }/build/labwc|" "$HOME"/.
 sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
 
 
+# Internet Wireless Daemon
+sudo pacman -S --needed iwd
+sudo systemctl  enable  iwd
+sudo systemctl  start   iwd
+
+
 # Status bar
 sudo pacman -S --needed waybar
 mkdir -p "$confdir"/waybar

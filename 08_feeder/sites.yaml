@@ -75,7 +75,7 @@ sites:
   - name: Phoronix
     url:  "https://www.phoronix.com/rss.php"
     displayUrl: "https://www.phoronix.com"
-    icon: "https://www.phoronix.com/android-chrome-192x192.png"
+    icon: "https://wsrv.nl/?url=phoronix.com/android-chrome-192x192.png"
     parser: rss
     description: Technology website with Linux and open source news.
     insertValues:
@@ -197,7 +197,7 @@ sites:
   - name: Low←Tech Magazine
     url:  "https://solar.lowtechmagazine.com/posts/index.xml"
     displayUrl: "https://solar.lowtechmagazine.com/archives/"
-    icon: "https://yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
+    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
     parser: rss
     description: Magazine exploring low-tech solutions to societal challenges.
     insertValues:
@@ -321,6 +321,6 @@ sites:
 
   - name: Stormcoast-Fortress
     url:  "http://www.stormcoast-fortress.net/"
-    icon: "https://static.freedownloadmanager.org/icon/32/1252/1252584.png"
+    icon: "https://wsrv.nl/?url=stormcoast-fortress.net/img/icon.gif"
     parser: stormcoast-fortress
     description: Primarily contains releases for SCMDraft, a map maker for StarCraft.

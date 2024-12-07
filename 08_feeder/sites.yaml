@@ -29,11 +29,26 @@ sites:
     parser: github
     description: Releases to the hex editor ImHex.
 
+  - name: Fuzzel Releases
+    url:  "https://codeberg.org/dnkl/fuzzel/releases.rss"
+    displayUrl: "https://codeberg.org/dnkl/fuzzel/releases"
+    icon: "https://codeberg.org/dnkl/fuzzel/raw/branch/master/doc/screenshot.png"
+    parser: rss
+    description: Releases to the app launcher Fuzzel.
+    insertValues:
+      - userPicture: "https://codeberg.org/avatars/6f18dfc8d88749c3103b76ab955c0e7c"
+
   - name: default-icon-theme Type=Scalable
     url:  "https://gitlab.freedesktop.org/xdg/default-icon-theme/-/issues/27"
     icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Freedesktop-logo-for-template.svg"
     parser: gitlab
     description: Question to freedesktop.org regarding Type=Scalable
+
+  - name: Waybar GTK4 branch
+    url:  "https://github.com/Alexays/Waybar/issues/2815"
+    icon: "https://www.gtk.org/assets/img/logo-gtk.png"
+    parser: github
+    description: Branch to move Waybar to the next version of the GTK framework.
 
   - name: GIMP 3.0.0 release
     url:  "https://gitlab.gnome.org/GNOME/gimp/-/issues/10373"
@@ -49,6 +64,15 @@ sites:
     description: News from the Gimp project.
 
   - name: Inkscape News
+    url:  "https://inkscape.org/news/feed/"
+    icon: "https://media.inkscape.org/static/images/inkscape-logo.svg"
+    parser: rss
+    description: News from vector graphics editor Inkscape.
+    insertValues:
+      - user: Inkscape Team
+      - userPicture: "https://media.inkscape.org/static/images/inkscape-logo.svg"
+
+  - name: Inkscape Development News
     url:  "https://inkscape.org/*membership/blog/feed/"
     displayUrl: "https://inkscape.org/*membership/blog/"
     icon: "https://media.inkscape.org/static/images/inkscape-logo.svg"
@@ -98,6 +122,13 @@ sites:
               - filter: architect
             - or:
               - filter: research
+
+  - name: Linuxiac
+    url:  "https://linuxiac.com/category/news/software/feed/"
+    displayUrl: "https://linuxiac.com/category/news/software/"
+    icon: "https://files.mastodon.social/accounts/avatars/108/288/607/816/054/957/original/44ef33fd13454e94.png"
+    parser: rss
+    description: News about open source software.
 
   - name: Marginalia Blog
     url:  "https://www.marginalia.nu/log/index.xml"

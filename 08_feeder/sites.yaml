@@ -249,19 +249,38 @@ sites:
     parser: rss
     description: Positive articles from the news site Reasons to be Cheerful.
 
-  - name: Fridays For Future
-    url:  "https://fridaysforfuture.org/feed/"
-    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
-    displayUrl: "https://fridaysforfuture.org/"
-    parser: rss
-    description: News from the climate action group Fridays For Future.
+  - name: Planet Wild YouTube channel
+    url:  "https://www.youtube.com/feeds/videos.xml?channel_id=UC6QFT2c2MJxID-vxHDeX9XQ"
+    displayUrl: "https://www.youtube.com/@planet-wild/videos"
+    icon: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
+    parser: atom
+    description: YouTube Channel of Planet Wild, aiming to restore ecosystems.
+    insertValues:
+      - userPicture: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
+
+  - name: Planet Wild Blog
+    url:  "https://planetwild.com/blog"
+    icon: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
+    parser: planetwild
+    description: Blog of Planet Wild, aiming to restore ecosystems.
+    insertValues:
+      - userPicture: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
 
   - name: Fridays For Future Sweden
     url:  "https://fridaysforfuture.se/feed/"
-    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
     displayUrl: "https://fridaysforfuture.se/nyheter/"
+    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
     parser: rss
     description: News from the Swedish branch of the climate action group Fridays For Future.
+
+  - name: Spårvagnsstäderna
+    url:  "https://api.client.notified.com/api/rss/publish/view/3570"
+    displayUrl: "https://press.sparvagnsstaderna.se/posts"
+    icon: "https://www.sparvagnsstaderna.se/sites/default/files/sparvagnsstaderna.png"
+    parser: rss
+    description: Organization that strives to make it easier to build tram lines.
+    insertValues:
+      - userPicture: "https://cdn.filestackcontent.com/Io2VCBBWRUi0vPH1rXYS"
 
   - name: Omtag Svensk Järnväg
     url:  "https://omtagsvenskjarnvag.se/feed/"

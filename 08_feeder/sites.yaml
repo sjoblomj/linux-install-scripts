@@ -303,14 +303,73 @@ sites:
     parser: rss
     description: News from the Swedish logistics site Dagens Logistik - Infrastruktur.
 
-  - name: Marduk
-    url:  "https://marduk.nu/feed/"
-    icon: "https://www.hell-is-open.de/gifs/bandlogos/marduk.jpg"
-    displayUrl: "https://marduk.nu/"
+  - name: Vesivius Challenge
+    url:  "https://scrollprize.substack.com/feed"
+    displayUrl: "https://scrollprize.substack.com/"
+    icon: "https://scrollprize.org/img/landing/fragment.webp"
     parser: rss
-    description: News from the black metal band Marduk.
+    description: A machine learning and computer vision competition to resurrect an ancient library from the ashes of a volcano.
     insertValues:
-      - userPicture: "https://marduk.nu/wp-content/themes/mardus/images/scroll-top.png"
+      - userPicture: "https://scrollprize.org/img/landing/fragment.webp"
+
+  - name: Gjellestadskipet excavation
+    url:  "https://www.vikingtidsmuseet.no/forskning/gjellestadskipet/siste-nytt/?vrtx=feed"
+    displayUrl: "https://www.vikingtidsmuseet.no/forskning/gjellestadskipet/siste-nytt/"
+    icon: "https://www.vikingtidsmuseet.no/vrtx/dist/resources/images/favicon.png"
+    parser: atom
+    description: News from the excavation of the viking ship Gjellestadskipet.
+    insertValues:
+      - userPicture: "https://www.vikingtidsmuseet.no/vrtx/dist/resources/images/favicon.png"
+
+  - name: Hornbore Ting
+    url:  "https://hornboreting.se/feed/"
+    icon: "https://hornboreting.se/wp-content/uploads/2015/05/hela-hornbore_vinr%C3%B6d.jpg"
+    displayUrl: "https://hornboreting.se"
+    parser: rss
+    description: News from the viking association Hornbore Ting
+
+  - name: Götheborg of Sweden news
+    url:  "https://www.gotheborg.se/nyheter/"
+    icon: "https://www.gotheborg.se/media/jzzanukn/favicon.png"
+    parser: gotheborg
+    description: News from the east india trade vessel replica Götheborg
+    insertValues:
+      - userPicture: "https://www.gotheborg.se/media/jzzanukn/favicon.png"
+
+  - name: Draken Harald Hårfagre news
+    url:  "https://www.drakenhh.com/news"
+    icon: "https://images.squarespace-cdn.com/content/v1/5957f58ebe6594dbcffacf91/1510661138870-2J152MO68AOLSWBD0GV8/favicon.ico"
+    parser: drakenhh
+    description: News from the viking ship Draken Harald Hårfagre
+    insertValues:
+      - user: Draken Harald Hårfagre
+      - userPicture: "https://images.squarespace-cdn.com/content/v1/5957f58ebe6594dbcffacf91/1510661138870-2J152MO68AOLSWBD0GV8/favicon.ico"
+
+  - name: Draken Harald Hårfagre YouTube channel
+    url:  "https://www.youtube.com/feeds/videos.xml?channel_id=UCNnLNJLZj11RlFYq4HZ6cTQ"
+    displayUrl: "https://www.youtube.com/channel/UCNnLNJLZj11RlFYq4HZ6cTQ"
+    icon: "https://images.squarespace-cdn.com/content/v1/5957f58ebe6594dbcffacf91/1510661138870-2J152MO68AOLSWBD0GV8/favicon.ico"
+    parser: atom
+    description: YouTube channel of the viking ship Draken Harald Hårfagre
+    insertValues:
+      - userPicture: "https://images.squarespace-cdn.com/content/v1/5957f58ebe6594dbcffacf91/1510661138870-2J152MO68AOLSWBD0GV8/favicon.ico"
+
+  - name: Saga Farmann Press releases
+    url:  "https://www.sagafarmann.com/pressarchive"
+    icon: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
+    parser: sagafarmann
+    description: News from the viking ship Saga Farmann
+    insertValues:
+      - userPicture: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
+
+  - name: Saga Farmann YouTube channel
+    url:  "https://www.youtube.com/feeds/videos.xml?channel_id=UCaPUAvRBw0i5ET79TMh2_MQ"
+    displayUrl: "https://www.youtube.com/channel/UCaPUAvRBw0i5ET79TMh2_MQ"
+    icon: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
+    parser: atom
+    description: YouTube channel of the viking ship Saga Farmann
+    insertValues:
+      - userPicture: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
 
   - name: Wardruna
     url:  "https://wardruna.com/news/"
@@ -320,6 +379,15 @@ sites:
     insertValues:
       - user: Wardruna
       - userPicture: "https://i.pinimg.com/originals/7e/36/e7/7e36e7d843fc8d095349a7aff6b4f770.jpg"
+
+  - name: Marduk
+    url:  "https://marduk.nu/feed/"
+    displayUrl: "https://marduk.nu/"
+    icon: "https://www.hell-is-open.de/gifs/bandlogos/marduk.jpg"
+    parser: rss
+    description: News from the black metal band Marduk.
+    insertValues:
+      - userPicture: "http://img.rtvslo.si/_up/avatars/149057.png"
 
   - name: Settlers2.net
     url:  "https://settlers2.net/rss.xml"

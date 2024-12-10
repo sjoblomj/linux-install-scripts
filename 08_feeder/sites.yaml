@@ -380,6 +380,15 @@ sites:
       - user: Wardruna
       - userPicture: "https://i.pinimg.com/originals/7e/36/e7/7e36e7d843fc8d095349a7aff6b4f770.jpg"
 
+  - name: Wardruna Concerts
+    url:  "https://rest.bandsintown.com/V3.1/artists/wardruna/events/?app_id=js_wardruna.com"
+    displayUrl: "https://www.bandsintown.com/a/294353-wardruna"
+    icon: "https://sropr.com/wp-content/uploads/2020/02/logo_wardruna_symbol-web.png"
+    parser: bandsintown
+    description: Concerts with the nordic folk band Wardruna.
+    insertValues:
+      - userPicture: "https://loopchicago.com/assets/Tourism-Operators/images/Wardruna__FillWzEyMDAsMTIwMF0.jpg"
+
   - name: Marduk
     url:  "https://marduk.nu/feed/"
     displayUrl: "https://marduk.nu/"

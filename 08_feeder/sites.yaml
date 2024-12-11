@@ -408,6 +408,12 @@ sites:
       - user: Merri
       - userPicture: "https://avatars.githubusercontent.com/u/976619"
 
+  - name: Return To The Roots News
+    url:  "https://www.siedler25.org/index.php"
+    icon: "https://avatars.githubusercontent.com/u/2520313"
+    parser: siedler25
+    description: News from the Settlers II clone RTTR.
+
   - name: Return To The Roots Releases
     url:  "https://github.com/Return-To-The-Roots/s25client/releases"
     icon: "https://avatars.githubusercontent.com/u/2520313"
@@ -437,6 +443,20 @@ sites:
     icon: "https://raw.githubusercontent.com/AntiMicroX/antimicrox/master/src/images/antimicrox.png"
     parser: github
     description: Releases for the gamepad mapper tool AntiMicroX.
+
+  - name: Student StarCraft Artificial Intelligence Tournament
+    url:  "https://www.youtube.com/feeds/videos.xml?channel_id=UCWQ_JrbZBq5uoDmrjQcajTA"
+    icon: "https://pbs.twimg.com/profile_images/578918491262087168/7GNZylP6_400x400.png"
+    parser: atom
+    description: YouTube channel posting videos on AI scripts playing StarCraft.
+    insertValues:
+      - userPicture: "https://pbs.twimg.com/profile_images/578918491262087168/7GNZylP6_400x400.png"
+
+  - name: Staredit Network
+    url:  "http://www.staredit.net"
+    icon: "https://wsrv.nl/?url=staredit.net/wiki/resources/assets/senglobe.png"
+    parser: staredit
+    description: News from the StarCraft mapping and modding community Staredit Network.
 
   - name: ShadowFlare's Realm
     url:  "https://sfsrealm.hopto.org/"

@@ -396,7 +396,7 @@ sites:
     parser: rss
     description: News from the black metal band Marduk.
     insertValues:
-      - userPicture: "http://img.rtvslo.si/_up/avatars/149057.png"
+      - userPicture: "https://img.rtvslo.si/_up/avatars/149057.png"
 
   - name: Settlers2.net
     url:  "https://settlers2.net/rss.xml"

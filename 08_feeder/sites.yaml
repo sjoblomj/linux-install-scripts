@@ -82,13 +82,6 @@ sites:
       - user: Inkscape Team
       - userPicture: "https://media.inkscape.org/static/images/inkscape-logo.svg"
 
-  - name: wlopm commits
-    url:  "https://git.sr.ht/~leon_plickat/wlopm/log/master/rss.xml"
-    displayUrl: "https://git.sr.ht/~leon_plickat/wlopm/log"
-    icon: "https://leon_plickat.srht.site/me.jpg"
-    parser: rss
-    description: Commits to wlopm, a tool for Wayland output power management. If bash completion is updated, the arch-install-scripts can be updated.
-
   - name: Arch Linux News
     url:  "https://archlinux.org/feeds/news/"
     displayUrl: "https://archlinux.org/news/"

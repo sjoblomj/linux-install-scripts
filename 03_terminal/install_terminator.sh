@@ -5,6 +5,8 @@ datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 sudo pacman -S --needed terminator
 if ! grep -sq "cursor_blink" "$confdir"/terminator/config ; then
     mkdir -p "$confdir"/terminator
+    echo "[keybindings]" >> "$confdir"/terminator/config
+    echo "  help =" >> "$confdir"/terminator/config
     echo "[profiles]" >> "$confdir"/terminator/config
     echo "  [[default]]" >> "$confdir"/terminator/config
     echo "    cursor_blink = False" >> "$confdir"/terminator/config

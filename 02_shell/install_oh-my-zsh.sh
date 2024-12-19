@@ -26,4 +26,5 @@ if [[ -z $ZSH ]]; then
   make_alias "alias ll='ls -la'"
   make_alias "alias weather='curl wttr.in\?M'"
   make_alias "alias distory='vim $HOME/.zsh_history'"
+  make_alias "alias dedup='find . ! -empty -type f -exec md5sum {} + | sort | uniq -w32 -dD'"
 fi

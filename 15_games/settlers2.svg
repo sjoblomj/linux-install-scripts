@@ -3,46 +3,70 @@
    shape-rendering="crispEdges"
    version="1.1"
    id="svg9"
+   sodipodi:docname="settlers2.svg"
+   width="32"
+   height="32"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="false"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="19.133505"
+     inkscape:cx="23.780274"
+     inkscape:cy="16.75072"
+     inkscape:window-width="1920"
+     inkscape:window-height="1023"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg9" />
   <defs
      id="defs9" />
   <metadata
      id="metadata1">Made with Pixels to Svg https://codepen.io/shshaw/pen/XbxvNj</metadata>
   <path
      stroke="#000000"
-     d="m 15,0 h 1 m -3,1 h 2 m 1,0 h 1 m 1,0 h 1 m -8,1 h 2 m 4,0 h 1 m 1,0 h 1 M 5,3 h 1 m 4,0 h 1 m 8,0 h 1 M 3,4 h 2 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 8,0 h 1 m 5,0 h 1 M 1,5 h 2 m 4,0 h 1 m 1,0 h 2 m 8,0 h 1 m 3,0 h 2 m 1,0 h 1 m 1,0 h 1 M 0,6 h 1 m 8,0 h 2 m 8,0 h 1 m 1,0 h 2 m 4,0 h 1 m 1,0 h 1 M 0,7 h 1 m 8,0 h 2 m 8,0 h 2 m 8,0 h 1 M 0,8 h 1 m 8,0 h 1 m 9,0 h 2 m 8,0 h 1 M 0,9 h 1 m 8,0 h 1 m 9,0 h 2 m 8,0 h 1 M 0,10 h 1 m 19,0 h 1 m 8,0 h 1 M 0,11 h 1 m 28,0 h 1 M 0,12 h 1 m 1,0 h 1 m 26,0 h 1 M 0,13 h 1 m 26,0 h 1 m 1,0 h 1 M 0,14 h 1 m 28,0 h 1 M 0,15 h 1 m 28,0 h 1 M 0,16 h 1 m 28,0 h 1 M 0,17 h 1 m 11,0 h 1 m 4,0 h 1 m 11,0 h 1 M 0,18 h 1 m 20,0 h 3 m 5,0 h 1 M 1,19 h 2 m 18,0 h 3 m 5,0 h 1 M 3,20 h 2 m 16,0 h 3 m 4,0 h 1 M 5,21 h 2 m 14,0 h 3 m 1,0 h 3 M 3,22 h 6 m 13,0 h 3 M 0,23 h 11 m 8,0 h 8 M 1,24 h 12 m 3,0 H 29 M 3,25 H 31 M 5,26 H 28 M 7,27 H 25 M 9,28 h 13 m -11,1 h 8 m -6,1 h 3"
+     d="m 15.5,1 h 1 m -3,1 h 2 m 1,0 h 1 m 1,0 h 1 m -8,1 h 2 m 4,0 h 1 m 1,0 h 1 m -15,1 h 1 m 4,0 h 1 m 8,0 h 1 m -17,1 h 2 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 8,0 h 1 m 5,0 h 1 m -25,1 h 2 m 4,0 h 1 m 1,0 h 2 m 8,0 h 1 m 3,0 h 2 m 1,0 h 1 m 1,0 h 1 m -29,1 h 1 m 8,0 h 2 m 8,0 h 1 m 1,0 h 2 m 4,0 h 1 m 1,0 h 1 m -30,1 h 1 m 8,0 h 2 m 8,0 h 2 m 8,0 h 1 m -30,1 h 1 m 8,0 h 1 m 9,0 h 2 m 8,0 h 1 m -30,1 h 1 m 8,0 h 1 m 9,0 h 2 m 8,0 h 1 m -30,1 h 1 m 19,0 h 1 m 8,0 h 1 m -30,1 h 1 m 28,0 h 1 m -30,1 h 1 m 1,0 h 1 m 26,0 h 1 m -30,1 h 1 m 26,0 h 1 m 1,0 h 1 m -30,1 h 1 m 28,0 h 1 m -30,1 h 1 m 28,0 h 1 m -30,1 h 1 m 28,0 h 1 m -30,1 h 1 m 11,0 h 1 m 4,0 h 1 m 11,0 h 1 m -30,1 h 1 m 20,0 h 3 m 5,0 h 1 m -29,1 h 2 m 18,0 h 3 m 5,0 h 1 m -27,1 h 2 m 16,0 h 3 m 4,0 h 1 m -24,1 h 2 m 14,0 h 3 m 1,0 h 3 m -25,1 h 6 m 13,0 h 3 m -25,1 h 11 m 8,0 h 8 m -26,1 h 12 m 3,0 h 13 m -26,1 h 28 m -26,1 h 23 m -21,1 h 18 m -16,1 h 13 m -11,1 h 8 m -6,1 h 3"
      id="path1" />
   <path
      stroke="#f89c48"
-     d="m 15,1 h 1 m 2,1 h 1 M 5,4 h 1 m 2,1 h 1 m 16,0 h 1 m 2,1 h 1 M 14,7 h 1 m -4,1 h 1 m 1,0 h 3 m 8,1 h 1 m -6,1 h 1 m 3,0 h 1 m -5,1 h 2 m 1,0 h 1 m -4,1 h 3 m 1,0 h 1 m -5,1 h 1 m 1,0 h 1 m -3,1 h 1"
+     d="m 15.5,2 h 1 m 2,1 h 1 m -14,2 h 1 m 2,1 h 1 m 16,0 h 1 m 2,1 h 1 m -15,1 h 1 m -4,1 h 1 m 1,0 h 3 m 8,1 h 1 m -6,1 h 1 m 3,0 h 1 m -5,1 h 2 m 1,0 h 1 m -4,1 h 3 m 1,0 h 1 m -5,1 h 1 m 1,0 h 1 m -3,1 h 1"
      id="path2" />
   <path
      stroke="#fcbc30"
-     d="m 13,2 h 1 m 2,1 h 1 M 3,5 h 1 m 7,0 h 1 m 1,0 h 2 M 6,6 h 1 m 5,0 h 1 m 1,0 h 1 m 8,0 h 1 M 11,7 h 1 m 1,0 h 1 m 12,0 h 1 m -6,1 h 2 M 11,9 h 1 m 1,0 h 1 m 7,0 h 3 M 9,10 h 1 m 6,0 h 1 m 4,0 h 2 m 1,0 h 1 m -4,1 h 1 m 1,0 h 1 m -13,2 h 1 m 1,0 h 1 m 9,0 h 1 m -12,1 h 1 m 1,0 h 1 m 6,0 h 1 M 9,15 h 1 m 1,0 h 1 m 1,0 h 1 m 5,0 h 1 M 6,16 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 M 1,17 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 2 M 2,18 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 5 M 4,19 h 11 m -9,1 h 9 m -7,1 h 7 m -5,1 h 5 m -3,1 h 3 m -1,1 h 1"
+     d="m 13.5,3 h 1 m 2,1 h 1 m -14,2 h 1 m 7,0 h 1 m 1,0 h 2 m -9,1 h 1 m 5,0 h 1 m 1,0 h 1 m 8,0 h 1 m -13,1 h 1 m 1,0 h 1 m 12,0 h 1 m -6,1 h 2 m -12,1 h 1 m 1,0 h 1 m 7,0 h 3 m -15,1 h 1 m 6,0 h 1 m 4,0 h 2 m 1,0 h 1 m -4,1 h 1 m 1,0 h 1 m -13,2 h 1 m 1,0 h 1 m 9,0 h 1 m -12,1 h 1 m 1,0 h 1 m 6,0 h 1 m -13,1 h 1 m 1,0 h 1 m 1,0 h 1 m 5,0 h 1 m -14,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m -14,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 2 m -13,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 5 m -11,1 h 11 m -9,1 h 9 m -7,1 h 7 m -5,1 h 5 m -3,1 h 3 m -1,1 h 1"
      id="path3" />
   <path
      stroke="#9c4800"
-     d="m 14,2 h 3 m -5,1 h 4 m 1,0 h 2 m -4,1 h 4 M 4,5 h 3 m 8,0 h 4 M 2,6 h 4 m 1,0 h 2 m 6,0 h 4 m 5,0 h 3 M 5,7 h 4 m 6,0 h 4 m 3,0 h 4 m 1,0 h 2 M 5,8 h 4 m 3,0 h 1 m 3,0 h 3 m 6,0 h 4 M 5,9 h 4 m 1,0 h 1 m 1,0 h 1 m 1,0 h 4 m 7,0 h 4 M 5,10 h 4 m 1,0 h 1 m 1,0 h 4 m 1,0 h 2 m 6,0 h 4 M 5,11 h 6 m 4,0 h 4 m 6,0 h 4 M 5,12 h 1 m 1,0 h 4 m 4,0 h 4 m 5,0 h 5 M 7,13 h 1 m 1,0 h 2 m 4,0 h 4 m 3,0 h 1 m 1,0 h 3 m 1,0 h 1 M 9,14 h 1 m 5,0 h 4 m 1,0 h 1 m 1,0 h 7 m -14,1 h 4 m 1,0 h 9 m -14,1 h 14 m -14,1 h 2 m 1,0 h 4 m 2,0 h 5 m -14,1 h 6 m 3,0 h 5 m -14,1 h 6 m 3,0 h 5 m -14,1 h 6 m 3,0 h 3 m -12,1 h 6 m -6,1 h 6 m -6,1 h 3"
+     d="m 14.5,3 h 3 m -5,1 h 4 m 1,0 h 2 m -4,1 h 4 m -15,1 h 3 m 8,0 h 4 m -17,1 h 4 m 1,0 h 2 m 6,0 h 4 m 5,0 h 3 m -22,1 h 4 m 6,0 h 4 m 3,0 h 4 m 1,0 h 2 m -24,1 h 4 m 3,0 h 1 m 3,0 h 3 m 6,0 h 4 m -24,1 h 4 m 1,0 h 1 m 1,0 h 1 m 1,0 h 4 m 7,0 h 4 m -24,1 h 4 m 1,0 h 1 m 1,0 h 4 m 1,0 h 2 m 6,0 h 4 m -24,1 h 6 m 4,0 h 4 m 6,0 h 4 m -24,1 h 1 m 1,0 h 4 m 4,0 h 4 m 5,0 h 5 m -22,1 h 1 m 1,0 h 2 m 4,0 h 4 m 3,0 h 1 m 1,0 h 3 m 1,0 h 1 m -20,1 h 1 m 5,0 h 4 m 1,0 h 1 m 1,0 h 7 m -14,1 h 4 m 1,0 h 9 m -14,1 h 14 m -14,1 h 2 m 1,0 h 4 m 2,0 h 5 m -14,1 h 6 m 3,0 h 5 m -14,1 h 6 m 3,0 h 5 m -14,1 h 6 m 3,0 h 3 m -12,1 h 6 m -6,1 h 6 m -6,1 h 3"
      id="path4" />
   <path
      stroke="#fcd814"
-     d="m 11,3 h 1 m -1,1 h 2 m 1,0 h 1 m -3,1 h 1 m -2,1 h 1 m 1,0 h 1 m -2,1 h 1 m 8,0 h 1 M 10,8 h 1 m 13,0 h 1 M 4,9 h 1 m -4,1 h 1 m 1,0 h 1 m -2,1 h 1 m 1,0 h 1 m 6,0 h 2 m 11,0 h 1 M 1,12 h 1 m 1,0 h 1 m 7,0 h 4 m 7,0 h 1 M 2,13 h 1 m 1,0 h 1 m 1,0 h 1 m 5,0 h 1 m 1,0 h 1 m 5,0 h 1 M 1,14 h 1 m 1,0 h 1 m 1,0 h 4 m 2,0 h 1 m 1,0 h 1 M 1,15 h 8 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 M 1,16 h 5 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 M 2,17 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m -8,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1"
+     d="m 11.5,4 h 1 m -1,1 h 2 m 1,0 h 1 m -3,1 h 1 m -2,1 h 1 m 1,0 h 1 m -2,1 h 1 m 8,0 h 1 m -12,1 h 1 m 13,0 h 1 m -21,1 h 1 m -4,1 h 1 m 1,0 h 1 m -2,1 h 1 m 1,0 h 1 m 6,0 h 2 m 11,0 h 1 m -24,1 h 1 m 1,0 h 1 m 7,0 h 4 m 7,0 h 1 m -21,1 h 1 m 1,0 h 1 m 1,0 h 1 m 5,0 h 1 m 1,0 h 1 m 5,0 h 1 m -20,1 h 1 m 1,0 h 1 m 1,0 h 4 m 2,0 h 1 m 1,0 h 1 m -13,1 h 8 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m -14,1 h 5 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m -12,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1 m -8,1 h 1 m 1,0 h 1 m 1,0 h 1 m 1,0 h 1"
      id="path5" />
   <path
      stroke="#d87c28"
-     d="m 13,4 h 1 M 3,7 h 1 m 19,1 h 1 m -6,1 h 1 m -6,2 h 1 M 1,18 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1"
+     d="m 13.5,5 h 1 m -11,3 h 1 m 19,1 h 1 m -6,1 h 1 m -6,2 h 1 m -13,7 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1 m 1,1 h 1"
      id="path6" />
   <path
      stroke="#fcfc00"
-     d="M 1,6 H 2 M 1,7 H 3 M 4,7 H 5 M 1,8 H 5 M 1,9 h 3 m -2,1 h 1 m 1,0 h 1 m 6,0 h 1 M 1,11 h 1 m 1,0 h 1 m 10,0 h 1 M 4,12 h 1 m 1,0 h 1 m -6,1 h 1 m 1,0 h 1 m 1,0 h 1 m 2,0 h 1 m -7,1 h 1 m 1,0 h 1 m 5,0 h 1"
+     d="m 1.5,7 h 1 m -1,1 h 2 m 1,0 h 1 m -4,1 h 4 m -4,1 h 3 m -2,1 h 1 m 1,0 h 1 m 6,0 h 1 m -11,1 h 1 m 1,0 h 1 m 10,0 h 1 m -11,1 h 1 m 1,0 h 1 m -6,1 h 1 m 1,0 h 1 m 1,0 h 1 m 2,0 h 1 m -7,1 h 1 m 1,0 h 1 m 5,0 h 1"
      id="path7" />
   <path
      stroke="#704420"
-     d="m 22,17 h 1 m 4,3 h 1 m -4,1 h 1 m -4,1 h 1 m -4,1 h 1 m -4,1 h 1"
+     d="m 22.5,18 h 1 m 4,3 h 1 m -4,1 h 1 m -4,1 h 1 m -4,1 h 1 m -4,1 h 1"
      id="path8" />
   <path
      stroke="#582c10"
-     d="m 23,17 h 1"
+     d="m 23.5,18 h 1"
      id="path9" />
 </svg>

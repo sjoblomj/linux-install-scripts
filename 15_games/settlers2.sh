@@ -6,7 +6,6 @@ if [ ! -d $HOME/games/settlers2 ]; then
     # Checkout and build RTTR
     sudo pacman -S --needed git unzip jq cmake
     sudo pacman -S --needed sdl2 sdl2_mixer boost miniupnpc
-    sudo ln -s /usr/lib/libminiupnpc.so.18 /usr/lib/libminiupnpc.so.17
 
     git clone --recursive https://github.com/Return-To-The-Roots/s25client.git $HOME/bin/s25client
     cd $HOME/bin/s25client || exit 1
@@ -21,6 +20,7 @@ if [ ! -d $HOME/games/settlers2 ]; then
     ## Fix build errors
     sed -i "s/#include </#include <cstdint>\n#include </" external/libsiedler2/src/oem.cpp
     sed -i "s/#include </#include <cstdint>\n#include </" libs/s25main/gameTypes/LanGameInfo.h
+    curl https://raw.githubusercontent.com/Return-To-The-Roots/libutil/master/libs/network/src/UPnP_Other.cpp -o external/libutil/libs/network/src/UPnP_Other.cpp
 
     mkdir -p build && cd build || exit 1
     cmake -DRTTR_ENABLE_WERROR=off -DCMAKE_BUILD_TYPE=Release ..

@@ -33,12 +33,12 @@
 		<item label="Exit labwc">
 			<action name="Exit" />
 		</item>
-        <item label="Lock screen">
-            <action name="Execute">
-                <command>swaylock -f -c 000000</command>
-            </action>
-        </item>
-        <item label="Reboot">
+		<item label="Lock screen">
+			<action name="Execute">
+				<command>swaylock -f -c 000000</command>
+			</action>
+		</item>
+		<item label="Reboot">
 			<action name="Execute">
 				<command>reboot</command>
 			</action>

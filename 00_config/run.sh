@@ -20,8 +20,8 @@ Xwayland is a complete X11 server, just like Xorg is, but instead of driving the
 opening input devices, it acts as a Wayland client. Notable programs that do not work without
 Xwayland are GIMP 2.x and the Jetbrains IDEs (https://youtrack.jetbrains.com/issue/JBR-3206)')
 if [ "${res}" = "${alt1}" ]; then
-    xwayland=""
-    sudo pacman -S --needed xorg-xwayland
+	xwayland=""
+	sudo pacman -S --needed xorg-xwayland
 fi
 
 sudo pacman -S --needed git jq
@@ -102,19 +102,19 @@ cp mako_config "$confdir"/mako/config
 # Screen locking
 sudo pacman -S --needed swaylock swayidle
 if [ ! -d "$HOME"/bin/chayang ]; then
-    git clone https://git.sr.ht/\~emersion/chayang "$HOME"/bin/chayang
-    cd "$HOME"/bin/chayang || exit 1
-    add_cronjob_to_check_git_repository "$HOME"/bin/chayang
-    meson setup build/
-    ninja -C build/
-    sudo cp build/chayang /usr/local/bin/
+	git clone https://git.sr.ht/\~emersion/chayang "$HOME"/bin/chayang
+	cd "$HOME"/bin/chayang || exit 1
+	add_cronjob_to_check_git_repository "$HOME"/bin/chayang
+	meson setup build/
+	ninja -C build/
+	sudo cp build/chayang /usr/local/bin/
 fi
 if [ ! -d "$HOME"/bin/wlopm ]; then
-    git clone https://git.sr.ht/\~leon_plickat/wlopm "$HOME"/bin/wlopm
-    cd "$HOME"/bin/wlopm || exit 1
-    add_cronjob_to_check_git_repository "$HOME"/bin/wlopm
-    make
-    sudo make install
+	git clone https://git.sr.ht/\~leon_plickat/wlopm "$HOME"/bin/wlopm
+	cd "$HOME"/bin/wlopm || exit 1
+	add_cronjob_to_check_git_repository "$HOME"/bin/wlopm
+	make
+	sudo make install
 fi
 
 
@@ -122,32 +122,32 @@ fi
 change=1
 cmd=""
 while [ $change -eq 1 ]; do
-    alt1="Yes, change screen resolution"
-    alt2="No, keep current screen resolution"
-    res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
-    if [ "${res}" = "${alt1}" ]; then
-        if [ ! -d "$HOME"/bin/wlr-randr ]; then
-            sudo pacman -S --needed jq
-            git clone https://git.sr.ht/\~emersion/wlr-randr "$HOME"/bin/wlr-randr
-            cd "$HOME"/bin/wlr-randr || exit 1
-            add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
-            meson setup build/
-            ninja -C build/
-        fi
-        echo ""
-        read -p "Enter screen scale factor: " factor
-        cmd="\$HOME/bin/wlr-randr/build/wlr-randr --output \$(\$HOME/bin/wlr-randr/build/wlr-randr --json | jq '.[].name' --raw-output) --scale $factor"
-        eval "$cmd"
-    else
-        change=0
-    fi
+	alt1="Yes, change screen resolution"
+	alt2="No, keep current screen resolution"
+	res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
+	if [ "${res}" = "${alt1}" ]; then
+		if [ ! -d "$HOME"/bin/wlr-randr ]; then
+			sudo pacman -S --needed jq
+			git clone https://git.sr.ht/\~emersion/wlr-randr "$HOME"/bin/wlr-randr
+			cd "$HOME"/bin/wlr-randr || exit 1
+			add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
+			meson setup build/
+			ninja -C build/
+		fi
+		echo ""
+		read -p "Enter screen scale factor: " factor
+		cmd="\$HOME/bin/wlr-randr/build/wlr-randr --output \$(\$HOME/bin/wlr-randr/build/wlr-randr --json | jq '.[].name' --raw-output) --scale $factor"
+		eval "$cmd"
+	else
+		change=0
+	fi
 done
 if [[ -n "$cmd" ]]; then
-    echo "" >> "$HOME"/.zprofile
-    echo "# Set scale factor after startup" >> "$HOME"/.zprofile
-    echo "startuptime=\$(date +%s)" >> "$HOME"/.zprofile
-    echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done" >> "$HOME"/.zprofile
-    echo "$cmd" >> "$HOME"/.zprofile
+	echo "" >> "$HOME"/.zprofile
+	echo "# Set scale factor after startup" >> "$HOME"/.zprofile
+	echo "startuptime=\$(date +%s)" >> "$HOME"/.zprofile
+	echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done" >> "$HOME"/.zprofile
+	echo "$cmd" >> "$HOME"/.zprofile
 fi
 
 
@@ -158,16 +158,16 @@ res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="
 Note that this will change the mouse speed for *all devices*.
 For this setting to take effect, a re-login must be performed.')
 if [ "${res}" = "${alt1}" ]; then
-    if [ ! -d "$HOME"/bin/libinput-config ]; then
-        git clone https://gitlab.com/warningnonpotablewater/libinput-config.git "$HOME"/bin/libinput-config
-        cd "$HOME"/bin/libinput-config || exit 1
-        add_cronjob_to_check_git_repository "$HOME"/bin/libinput-config
-        meson setup build/
-        cd build || exit 1
-        ninja
-        sudo ninja install
-    fi
-    echo ""
-    read -p "Enter mouse speed factor: " factor
-    echo "speed=$factor" | sudo tee /etc/libinput.conf
+	if [ ! -d "$HOME"/bin/libinput-config ]; then
+		git clone https://gitlab.com/warningnonpotablewater/libinput-config.git "$HOME"/bin/libinput-config
+		cd "$HOME"/bin/libinput-config || exit 1
+		add_cronjob_to_check_git_repository "$HOME"/bin/libinput-config
+		meson setup build/
+		cd build || exit 1
+		ninja
+		sudo ninja install
+	fi
+	echo ""
+	read -p "Enter mouse speed factor: " factor
+	echo "speed=$factor" | sudo tee /etc/libinput.conf
 fi

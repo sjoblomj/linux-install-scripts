@@ -7,5 +7,5 @@ extras="bazel    (Java build automation tool)\nmaven    (Java build automation t
 selection=$(printf "$javas\n$extras" | fzf --multi --tac --margin=4 --border --border-label="${title}" | awk '{print $1;}')
 
 if [ "$selection" != "" ]; then
-    ./install.sh "$selection"
+	./install.sh "$selection"
 fi

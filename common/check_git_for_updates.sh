@@ -13,14 +13,14 @@ REMOTE=$(git rev-parse   "$UPSTREAM")
 BASE=$(git  merge-base @ "$UPSTREAM")
 
 if [ $LOCAL = $REMOTE ]; then
-    echo "Up to date"
+	echo "Up to date"
 elif [ $LOCAL = $BASE ]; then
-    $HOME/bin/letters/post_letter.sh "$HOME/.letters/$COMPONENT" "$COMPONENT" "cd $DIR && git pull"
-    echo "Need to pull"
+	$HOME/bin/letters/post_letter.sh "$HOME/.letters/$COMPONENT" "$COMPONENT" "cd $DIR && git pull"
+	echo "Need to pull"
 elif [ $REMOTE = $BASE ]; then
-    echo "Need to push"
+	echo "Need to push"
 else
-    echo "Diverged"
+	echo "Diverged"
 fi
 
 cd $prevdir

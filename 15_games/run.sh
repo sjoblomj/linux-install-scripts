@@ -10,25 +10,25 @@ alts="${alt1}\n${alt2}\n${alt3}\n${alt4}\n${esc}"
 
 while true; do
 	if [ "${alts}" = "${esc}" ]; then
-	    res="${esc}"
+		res="${esc}"
 	else
-	    res=$(printf "${alts}" | fzf --tac --margin=4 --border --border-label="${title}")
+		res=$(printf "${alts}" | fzf --tac --margin=4 --border --border-label="${title}")
 	fi
 
 
 	if [ "${res}" = "${alt1}" ]; then
-	    alts=$(echo "${alts}" | sed "s/\\${alt1}\\\\n//g")
-	    ./zelda.sh
+		alts=$(echo "${alts}" | sed "s/\\${alt1}\\\\n//g")
+		./zelda.sh
 	elif [ "${res}" = "${alt2}" ]; then
-	    alts=$(echo "${alts}" | sed "s/\\${alt2}\\\\n//g")
-	    ./warcraft.sh
+		alts=$(echo "${alts}" | sed "s/\\${alt2}\\\\n//g")
+		./warcraft.sh
 	elif [ "${res}" = "${alt3}" ]; then
-	    alts=$(echo "${alts}" | sed "s/\\${alt3}\\\\n//g")
-	    ./settlers2.sh
+		alts=$(echo "${alts}" | sed "s/\\${alt3}\\\\n//g")
+		./settlers2.sh
 	elif [ "${res}" = "${alt4}" ]; then
-	    alts=$(echo "${alts}" | sed "s/\\${alt4}\\\\n//g")
-	    ./monkeyisland.sh
+		alts=$(echo "${alts}" | sed "s/\\${alt4}\\\\n//g")
+		./monkeyisland.sh
 	else
-	    exit 0
+		exit 0
 	fi
 done

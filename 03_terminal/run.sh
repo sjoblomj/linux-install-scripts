@@ -25,7 +25,7 @@ while true; do
 	elif [ "${res}" = "${alt3}" ]; then
 		alts=$(echo "${alts}" | sed "s/\\${alt3}\\\\n//g")
 		./install_humanlog.sh
-    elif [ "${res}" = "${alt4}" ]; then
+	elif [ "${res}" = "${alt4}" ]; then
 		alts=$(echo "${alts}" | sed "s/\\${alt4}\\\\n//g")
 		./install_yq.sh
 	else

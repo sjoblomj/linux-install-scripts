@@ -21,11 +21,17 @@ if [ "$selections" != "" ]; then
 			echo "[General]" >> "$confdir"/lximage-qt/settings.conf
 			echo "fallbackIconTheme=vintage" >> "$confdir"/lximage-qt/settings.conf
 		fi
+		# lximage-qt can handle all image formats supported by Qt as well as images extended by qt6-imageformats and kimageformats.
+		# These are supported by Qt: https://doc.qt.io/qt-6/qimagereader.html#supportedImageFormats
+		sudo pacman -S --needed xdg-utils
+		xdg-mime default lximage-qt.desktop image/bmp image/gif image/jpeg image/png image/x-portable-bitmap image/x-portable-graymap image/x-portable-pixmap image/x-xbitmap image/x-xpixmap image/svg+xml
 	fi
 	if [[ "$selections" =~ "evince" ]]; then
 		if [ -f /usr/share/applications/org.gnome.Evince.desktop ] && [ ! -f /usr/share/applications/evince.desktop ]; then
 			sudo cp /usr/share/applications/org.gnome.Evince.desktop /usr/share/applications/evince.desktop
 		fi
+		sudo pacman -S --needed xdg-utils
+		xdg-mime default evince.desktop application/pdf
 	fi
 	if [[ "$selections" =~ "transmission-qt" ]]; then
 		sudo pacman -S --needed qt6-wayland

@@ -17,7 +17,7 @@
     <keybind key="A-Up" />
     <keybind key="A-Down" />
     <keybind key="W-Return">
-      <action name="Execute" command="terminator" />
+      <action name="Execute" command="ghostty" />
     </keybind>
     <keybind key="W-X">
       <action name="Execute" command="fuzzel --dpi-aware yes" />

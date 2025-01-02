@@ -9,7 +9,7 @@
 		</item>
 		<item label="Terminal">
 			<action name="Execute">
-				<command>terminator</command>
+				<command>ghostty</command>
 			</action>
 		</item>
 		<menu id="screenshot-menu" label="Screenshots">

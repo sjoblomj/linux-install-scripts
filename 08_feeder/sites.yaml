@@ -5,18 +5,6 @@ sites:
     parser: youtrack
     description: Issue for when the JetBrains IDEs will get Wayland support.
 
-  - name: VTE Sixel Implementation
-    url:  "https://gitlab.gnome.org/GNOME/vte/-/issues/253"
-    icon: "https://upload.wikimedia.org/wikipedia/commons/3/39/Gnomelogo-footprint.svg"
-    parser: gitlab
-    description: Issue for when GNOME VTE, upon which Terminator depends, will get Sixel support.
-
-  - name: Terminator Releases
-    url:  "https://github.com/gnome-terminator/terminator/releases"
-    icon: "https://avatars.githubusercontent.com/u/63008829"
-    parser: github
-    description: Releases to the terminal Terminator.
-
   - name: labwc Releases
     url:  "https://github.com/labwc/labwc/releases"
     icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"

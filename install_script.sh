@@ -16,7 +16,7 @@ cd $HOME/bin/fzf
 ./install
 PATH="${PATH:+${PATH}:}$HOME/bin/fzf/bin"
 
-git clone https://github.com/sjoblomj/arch-install-scripts $HOME/code/arch-install-scripts
-cd $HOME/code/arch-install-scripts
+git clone https://github.com/sjoblomj/linux-install-scripts $HOME/code/linux-install-scripts
+cd $HOME/code/linux-install-scripts
 
 ./find_scripts.sh

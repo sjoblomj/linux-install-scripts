@@ -35,7 +35,7 @@ cd "$labwc_path" || exit 1
 meson setup "${xwayland}" build/
 meson compile -C build/
 mkdir -p "$confdir"/labwc
-cd "$HOME"/code/arch-install-scripts/00_config || exit 1
+cd "$HOME"/code/linux-install-scripts/00_config || exit 1
 cp autostart environment menu.xml rc.xml themerc-override "$confdir"/labwc
 cp .zprofile "$HOME"/
 sed -i "s|./bin/labwc/build/labwc|${labwc_path// /\\\\ }/build/labwc|" "$HOME"/.zprofile

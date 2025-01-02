@@ -429,7 +429,7 @@ sites:
     url:  "https://github.com/snesrev/zelda3/pull/248"
     icon: "https://user-images.githubusercontent.com/114783946/193422264-36e59bac-68b4-437f-819d-ea292efa6466.png"
     parser: github
-    description: Issue for adding proper support for desktop files for Zelda3. With it, the arch-install-scripts can be updated.
+    description: Issue for adding proper support for desktop files for Zelda3. With it, the linux-install-scripts can be updated.
 
   - name: AntiMicroX Releases
     url:  "https://github.com/AntiMicroX/antimicrox/releases"

@@ -1,8 +1,13 @@
 #!/bin/bash
 
 source ../common/aliases.sh
+source ../common/install.sh
 
-sudo pacman -S --needed git diff-so-fancy
+if [ $(is_ubuntu) ]; then
+	sudo add-apt-repository ppa:aos1/diff-so-fancy
+	sudo apt update
+fi
+install_programs git diff-so-fancy
 
 echo ""
 read -p "Enter name (to use globally for git): " name

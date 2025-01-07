@@ -1,6 +1,12 @@
 #!/bin/bash
+source ../common/install.sh
 
-sudo pacman -S --needed go jq
+install_programs jq
+if [ $(is_ubuntu) ]; then
+	install_programs golang-go
+else
+	install_programs go
+fi
 
 # Install
 if [ ! -f $HOME/go/bin/yq ]; then

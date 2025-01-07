@@ -1,12 +1,13 @@
 #!/bin/bash
+source ../common/install.sh
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 
 product_code="$1"
 product_dir="$2"
 if [ ! -d $HOME/bin/${product_dir}-* ]; then
-	sudo pacman -S --needed curl tar
-	sudo pacman -S --needed xwayland  # No native Wayland support yet   https://youtrack.jetbrains.com/issue/JBR-3206
+	install_programs curl tar
+	install_programs xwayland  # No native Wayland support yet   https://youtrack.jetbrains.com/issue/JBR-3206
 	curl -L "https://download.jetbrains.com/product?code=${product_code}&latest&distribution=linux" -o "${product_code}.tar.gz"
 
 	mkdir -p $HOME/bin

@@ -1,13 +1,19 @@
 #!/bin/bash
-
 source ../common/aliases.sh
+source ../common/install.sh
 
-sudo pacman -S --needed zsh zsh-completions
+if [ $(is_ubuntu) ]; then
+	install_programs zsh
+	install_programs gawk
+else
+	install_programs zsh zsh-completions
+fi
+install_programs curl
+
 if [[ -z $ZSH ]]; then
 	sudo chsh -s $(which zsh) # Change default shell for root user
 	chsh -s $(which zsh)      # Change default shell for normal user
 
-	sudo pacman -S --needed curl
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 	iconpath='.local/share/icons/hicolor/64x64/actions'

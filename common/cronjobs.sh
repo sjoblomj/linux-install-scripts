@@ -1,12 +1,13 @@
 #!/bin/bash
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+source $SCRIPT_DIR/install.sh
 
 add_cronjob_to_check_git_repository() {
 	local DIR="$1"
 	local COMPONENT="${2:-$(basename $DIR)}"
 
-	sudo pacman -S --needed cronie
+	install_programs cronie
 	sudo systemctl enable cronie.service
 	sudo systemctl start  cronie.service
 

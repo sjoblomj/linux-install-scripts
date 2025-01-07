@@ -1,6 +1,14 @@
 #!/bin/bash
 source ../common/cronjobs.sh
 
+prevdir=$(pwd)
+if [ ! -d $HOME/bin/fzf ]; then
+	git clone https://github.com/junegunn/fzf.git $HOME/bin/fzf
+	cd $HOME/bin/fzf
+	./install
+fi
+cd "$prevdir" || exit 1
+
 add_cronjob_to_check_git_repository "$HOME/bin/fzf"
 
 if [ -f $HOME/.fzf.bash ] && [ ! -f $HOME/.fzf.zsh ]; then

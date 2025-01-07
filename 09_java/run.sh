@@ -1,7 +1,14 @@
 #!/bin/bash
+source ../common/install.sh
+
 preview_dir="programs/"
 title="Install Java and tools (Select with Tab)?"
-javas=$(pacman -Ss java | grep -Po "jdk[0-9]*-openjdk" | uniq)
+if [ $(is_ubuntu) ]; then
+	openjdkpackages="openjdk-[0-9]*-jdk"
+else
+	openjdkpackages="jdk[0-9]*-openjdk"
+fi
+javas=$(search_package java | grep -Po "$openjdkpackages" | uniq)
 extras="bazel    (Java build automation tool)\nmaven    (Java build automation tool)\nmvntree  (mvn dependency tree prettifier)"
 
 selection=$(printf "$javas\n$extras" | fzf --multi --tac --margin=4 --border --border-label="${title}" | awk '{print $1;}')

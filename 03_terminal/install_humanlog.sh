@@ -1,10 +1,14 @@
 #!/bin/bash
+source ../common/install.sh
+
+install_programs curl
+
 mkdir -p $HOME/bin
 export HUMANLOG_INSTALL=$HOME/bin/humanlog
 
 # Install
 if [ ! -d $HUMANLOG_INSTALL ]; then
-	curl -L "https://humanlog.io/install.sh" | sh
+	curl -L "https://humanlog.io/install.sh" | bash
 fi
 
 # Add to PATH if not present

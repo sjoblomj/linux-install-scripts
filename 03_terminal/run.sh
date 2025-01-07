@@ -1,7 +1,14 @@
 #!/bin/bash
+source ../common/install.sh
+
+if [ $(is_ubuntu) ]; then
+	terminal="Terminator"
+else
+	terminal="Ghostty"
+fi
 
 title="Install terminal and config?"
-alt1="Install and configure Ghostty (terminal)"
+alt1="Install and configure $terminal (terminal)"
 alt2="Install yazi (terminal file manager)"
 alt3="Configure fzf"
 alt4="Install humanlog (log prettifier)"

@@ -1,5 +1,6 @@
 #!/bin/bash
 source ../common/cronjobs.sh
+source ../common/install.sh
 
 post_addon_letter() {
 	local filename="$HOME/.letters/firefox"
@@ -16,7 +17,7 @@ post_addon_letter() {
 	echo -e "${C_GREY46}firefox $curr_dir/addons.html${NO_FORMAT}" >> "$filename"
 }
 
-sudo pacman -S --needed git
+install_programs git
 
 install_dir="$HOME/bin/arkenfox"
 git clone https://github.com/arkenfox/user.js.git $install_dir

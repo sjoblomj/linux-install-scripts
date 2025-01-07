@@ -1,9 +1,16 @@
 #!/bin/bash
 
 source ../common/aliases.sh
+source ../common/install.sh
 
-sudo pacman -S --needed docker docker-compose
-sudo systemctl start docker.service
+if [ $(is_ubuntu) ]; then
+	curl -fsSL https://get.docker.com | sudo sh
+    # TODO: Likely not needed:
+	#install_programs uidmap dbus-user-session docker-ce-rootless-extras
+else
+	install_programs docker docker-compose
+fi
+sudo systemctl start  docker.service
 sudo systemctl enable docker.service
 sudo usermod -aG docker "${USER}"
 

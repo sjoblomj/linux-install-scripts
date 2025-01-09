@@ -17,8 +17,8 @@ if [ $(is_ubuntu) ] && [ ! -d "$HOME"/bin/yazi ]; then
 	cargo build --release --locked
 	sudo cp target/release/yazi target/release/ya /usr/local/bin/
 
-	./install_fonts.sh
 	cd "$prevdir" || exit 1
+	./install_fonts.sh
 else
 	install_programs yazi
 fi

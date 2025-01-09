@@ -29,7 +29,7 @@ while true; do
 		./install_terminal.sh
 	elif [ "${res}" = "${alt2}" ]; then
 		alts=$(echo "${alts}" | sed "s/\\${alt2}\\\\n//g")
-		./configure_yazi.sh
+		./install_yazi.sh
 	elif [ "${res}" = "${alt3}" ]; then
 		alts=$(echo "${alts}" | sed "s/\\${alt3}\\\\n//g")
 		./configure_fzf.sh

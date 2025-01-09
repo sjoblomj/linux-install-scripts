@@ -10,8 +10,9 @@ selections=$(ls "$preview_dir" | fzf --multi --layout=reverse --margin=4 --borde
 if [ $(is_ubuntu) ]; then
 	if [ "$selections" != "" ]; then
 
-		if [ "$selections" =~ "bottom" ]; then
-			tmpfile=$(mktemp)
+		if [[ "$selections" =~ "bottom" ]]; then
+			install_programs curl
+			tempfile=$(mktemp)
 			url=$(curl -sL \
 			  -H "Accept: application/vnd.github+json" \
 			  -H "X-GitHub-Api-Version: 2022-11-28" \
@@ -22,21 +23,21 @@ if [ $(is_ubuntu) ]; then
 			rm "$tempfile"
 			selections=$(echo "${selections}" | sed "s/bottom//g")
 		fi
-		if [ "$selections" =~ "dust" ]; then
+		if [[ "$selections" =~ "dust" ]]; then
 			sudo snap install dust
 			selections=$(echo "${selections}" | sed "s/dust//g")
 		fi
-		if [ "$selections" =~ "gtop" ]; then
+		if [[ "$selections" =~ "gtop" ]]; then
 			install_programs npm
 			npm install gtop -g
 			selections=$(echo "${selections}" | sed "s/gtop//g")
 		fi
-		if [ "$selections" =~ "task" ]; then
+		if [[ "$selections" =~ "task" ]]; then
 			install_programs taskwarrior
 			selections=$(echo "${selections}" | sed "s/task//g")
 		fi
 
-		install_programs "$selections"
+		install_programs $selections
 	fi
 
 else # Not Ubuntu

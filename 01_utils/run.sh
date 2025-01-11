@@ -1,5 +1,6 @@
 #!/bin/bash
 source ../common/install.sh
+source ../common/aliases.sh
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 
@@ -29,8 +30,11 @@ if [ $(is_ubuntu) ]; then
 		fi
 		if [[ "$selections" =~ "gtop" ]]; then
 			install_programs npm
-			npm install gtop -g
+			sudo npm install gtop -g
 			selections=$(echo "${selections}" | sed "s/gtop//g")
+		fi
+		if [[ "$selections" =~ "bat" ]]; then
+			make_alias "alias bat='batcat'"
 		fi
 		if [[ "$selections" =~ "task" ]]; then
 			install_programs taskwarrior

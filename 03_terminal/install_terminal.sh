@@ -16,7 +16,7 @@ if [ $(is_ubuntu) ]; then
     cursor_blink = False
     scrollback_lines = 50000
     use_system_font = False
-    font = Source Code Pro 16
+    font = FiraCode Nerd Font Mono 16
 " >> "$confdir"/terminator/config
 fi
 else

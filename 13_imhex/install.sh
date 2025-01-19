@@ -1,12 +1,18 @@
 #!/bin/bash
+source ../common/install.sh
 
 prevdir=$(pwd)
 if [ ! -d $HOME/bin/ImHex ]; then
+	install_programs git
 	git clone https://github.com/WerWolv/ImHex --recurse-submodules $HOME/bin/ImHex
 	cd $HOME/bin/ImHex || exit 1
 
-	sudo pacman -S --needed ccache
-	sudo ./dist/get_deps_archlinux.sh
+	install_programs ccache
+	if [ $(is_ubuntu) -eq 1 ]; then
+		sudo ./dist/get_deps_debian.sh
+	else
+		sudo ./dist/get_deps_archlinux.sh
+	fi
 
 	mkdir -p build
 	cd build || exit 1
@@ -24,6 +30,6 @@ if [ ! -d $HOME/bin/ImHex ]; then
 	sudo make -j 4 install
 
 	mkdir -p $HOME/.local/share/icons/hicolor/scalable/apps/
-	curl https://raw.githubusercontent.com/WerWolv/ImHex/5f75c8684fed5b749c9331fad7f07872c8f82c31/resources/icon.svg -o $HOME/.local/share/icons/hicolor/scalable/apps/imhex.svg
+	cp ../resources/icon.svg $HOME/.local/share/icons/hicolor/scalable/apps/imhex.svg
 fi
 cd "$prevdir" || exit 1

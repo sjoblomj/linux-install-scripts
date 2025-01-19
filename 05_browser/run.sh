@@ -3,7 +3,7 @@ source ../common/install.sh
 
 title="Install web browsers? (Select with Tab, Esc to quit)"
 chromium="chromium"
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	chromium="chromium-browser"
 fi
 

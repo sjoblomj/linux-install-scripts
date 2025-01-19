@@ -3,7 +3,7 @@ source ../common/install.sh
 
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-if [ $(is_ubuntu) ] && [ ! -d "$HOME"/bin/yazi ]; then
+if [ $(is_ubuntu) -eq 1 ] && [ ! -d "$HOME"/bin/yazi ]; then
 	prevdir=$(pwd)
 	mkdir -p "$HOME"/bin
 

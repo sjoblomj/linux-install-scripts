@@ -1,7 +1,7 @@
 #!/bin/bash
 source ../common/install.sh
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	terminal="Terminator"
 else
 	terminal="Ghostty"

@@ -18,7 +18,7 @@ if [[ "$programs" =~ "maven" ]]; then
 fi
 
 if [[ "$programs" =~ "bazel" ]]; then
-	if [ $(is_ubuntu) ]; then
+	if [ $(is_ubuntu) -eq 1 ]; then
 		install_programs apt-transport-https curl gnupg
 		curl -fsSL https://bazel.build/bazel-release.pub.gpg | gpg --dearmor >bazel-archive-keyring.gpg
 		sudo mv bazel-archive-keyring.gpg /usr/share/keyrings

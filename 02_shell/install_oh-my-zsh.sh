@@ -2,7 +2,7 @@
 source ../common/aliases.sh
 source ../common/install.sh
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	install_programs zsh
 	install_programs gawk
 else

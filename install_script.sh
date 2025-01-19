@@ -1,22 +1,22 @@
 #!/bin/bash
 
 is_ubuntu() {
-    if [ $(awk -F= '/^NAME/{gsub("\"", "", $2); print $2}' /etc/os-release) = "Ubuntu" ]; then
-        echo 1
-    else
-        echo 0
-    fi
+	if [ "$(awk -F= '/^NAME/{gsub("\"", "", $2); print $2}' /etc/os-release)" = "Ubuntu" ]; then
+		echo 1
+	else
+		echo 0
+	fi
 }
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	sudo apt-get update
 	sudo apt-get upgrade
-    sudo apt-get install curl git
+	sudo apt-get install curl git
 else
 	sudo pacman-key --init
 	sudo pacman-key --populate archlinux
 	sudo pacman -Suy
-    sudo pacman -S --needed curl git
+	sudo pacman -S --needed curl git
 fi
 
 git clone https://github.com/junegunn/fzf.git "$HOME"/bin/fzf

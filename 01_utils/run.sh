@@ -8,7 +8,7 @@ preview_dir="programs/"
 title="Choose programs to install (Select with Tab)"
 selections=$(ls "$preview_dir" | fzf --multi --layout=reverse --margin=4 --border --border-label="${title}" --preview "cat ${preview_dir}{}" --preview-window right:wrap)
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	if [ "$selections" != "" ]; then
 
 		if [[ "$selections" =~ "bottom" ]]; then

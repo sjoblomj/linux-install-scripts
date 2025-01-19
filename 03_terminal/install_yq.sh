@@ -2,7 +2,7 @@
 source ../common/install.sh
 
 install_programs jq
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	install_programs golang-go
 else
 	install_programs go

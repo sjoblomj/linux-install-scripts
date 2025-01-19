@@ -1,10 +1,10 @@
 #!/bin/bash
 source ../common/install.sh
 
-if [ $(is_ubuntu) ]; then
-    alt1="Setup Ubuntu configuration"
+if [ $(is_ubuntu) -eq 1 ]; then
+	alt1="Setup Ubuntu configuration"
 else
-    alt1="Install labwc and setup system"
+	alt1="Install labwc and setup system"
 fi
 title="Setup system"
 esc="Cancel"
@@ -20,11 +20,11 @@ while true; do
 
 	if [ "${res}" = "${alt1}" ]; then
 		alts=$(echo "${alts}" | sed "s/\\${alt1}\\\\n//g")
-        if [ $(is_ubuntu) ]; then
-	    	./setup_ubuntu.sh
-        else
-            ./install_labwc_system.sh
-        fi
+		if [ $(is_ubuntu) -eq 1 ]; then
+			./setup_ubuntu.sh
+		else
+			./install_labwc_system.sh
+		fi
 	else
 		exit 0
 	fi

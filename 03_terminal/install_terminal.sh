@@ -3,7 +3,7 @@ source ../common/install.sh
 
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	install_programs terminator
 
 	if ! grep -sq "cursor_blink" "$confdir"/terminator/config ; then

@@ -3,7 +3,7 @@ source ../common/install.sh
 
 preview_dir="programs/"
 title="Install Java and tools (Select with Tab)?"
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	openjdkpackages="openjdk-[0-9]*-jdk"
 else
 	openjdkpackages="jdk[0-9]*-openjdk"

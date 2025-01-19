@@ -3,7 +3,7 @@
 source ../common/aliases.sh
 source ../common/install.sh
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	sudo add-apt-repository ppa:aos1/diff-so-fancy
 	sudo apt update
 fi

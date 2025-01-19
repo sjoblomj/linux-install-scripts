@@ -3,9 +3,9 @@
 source ../common/aliases.sh
 source ../common/install.sh
 
-if [ $(is_ubuntu) ]; then
+if [ $(is_ubuntu) -eq 1 ]; then
 	curl -fsSL https://get.docker.com | sudo sh
-    # TODO: Likely not needed:
+	# TODO: Likely not needed:
 	#install_programs uidmap dbus-user-session docker-ce-rootless-extras
 else
 	install_programs docker docker-compose

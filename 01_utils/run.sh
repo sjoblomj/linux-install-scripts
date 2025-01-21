@@ -1,6 +1,7 @@
 #!/bin/bash
 source ../common/install.sh
 source ../common/aliases.sh
+
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 
@@ -33,12 +34,16 @@ if [ $(is_ubuntu) -eq 1 ]; then
 			sudo npm install gtop -g
 			selections=$(echo "${selections}" | sed "s/gtop//g")
 		fi
-		if [[ "$selections" =~ "bat" ]]; then
-			make_alias "alias bat='batcat'"
+		if [[ "$selections" =~ "papers" ]]; then
+			flatpak install flathub org.gnome.Papers
+			selections=$(echo "${selections}" | sed "s/papers//g")
 		fi
 		if [[ "$selections" =~ "task" ]]; then
 			install_programs taskwarrior
 			selections=$(echo "${selections}" | sed "s/task//g")
+		fi
+		if [[ "$selections" =~ "bat" ]]; then
+			make_alias "alias bat='batcat'"
 		fi
 
 		install_programs $selections
@@ -65,12 +70,9 @@ else # Not Ubuntu
 			install_programs xdg-utils
 			xdg-mime default lximage-qt.desktop image/bmp image/gif image/jpeg image/png image/x-portable-bitmap image/x-portable-graymap image/x-portable-pixmap image/x-xbitmap image/x-xpixmap image/svg+xml
 		fi
-		if [[ "$selections" =~ "evince" ]]; then
-			if [ -f /usr/share/applications/org.gnome.Evince.desktop ] && [ ! -f /usr/share/applications/evince.desktop ]; then
-				sudo cp /usr/share/applications/org.gnome.Evince.desktop /usr/share/applications/evince.desktop
-			fi
+		if [[ "$selections" =~ "papers" ]]; then
 			install_programs xdg-utils
-			xdg-mime default evince.desktop application/pdf
+			xdg-mime default org.gnome.Papers.desktop application/pdf
 		fi
 		if [[ "$selections" =~ "transmission-qt" ]]; then
 			install_programs qt6-wayland

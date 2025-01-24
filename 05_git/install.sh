@@ -6,6 +6,9 @@ source ../common/install.sh
 if [ $(is_ubuntu) -eq 1 ]; then
 	sudo add-apt-repository ppa:aos1/diff-so-fancy
 	sudo apt update
+	install_programs openssh-client
+else
+	install_programs openssh
 fi
 install_programs git diff-so-fancy
 

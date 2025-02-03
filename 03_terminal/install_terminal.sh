@@ -30,11 +30,17 @@ cursor-style-blink = false
 shell-integration-features = no-cursor
 linux-cgroup = always
 
-keybind = alt+up=goto_split:top
-keybind = alt+down=goto_split:bottom
+keybind = alt+up=goto_split:up
+keybind = alt+down=goto_split:down
 keybind = alt+right=goto_split:right
 keybind = alt+left=goto_split:left
+keybind = ctrl+shift+up=resize_split:up,10
+keybind = ctrl+shift+down=resize_split:down,10
+keybind = ctrl+shift+right=resize_split:right,10
+keybind = ctrl+shift+left=resize_split:left,10
 keybind = ctrl+shift+x=toggle_split_zoom
+keybind = ctrl+shift+w=close_surface
+keybind = super+t=toggle_tab_overview
 " >> "$confdir"/ghostty/config
 	fi
 fi

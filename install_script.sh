@@ -19,12 +19,16 @@ else
 	sudo pacman -S --needed curl git
 fi
 
-git clone https://github.com/junegunn/fzf.git "$HOME"/bin/fzf
+if [ ! -d "$HOME"/bin/fzf ]; then
+	git clone https://github.com/junegunn/fzf.git "$HOME"/bin/fzf
+fi
 cd "$HOME"/bin/fzf
 ./install
 PATH="${PATH:+${PATH}:}"$HOME"/bin/fzf/bin"
 
-git clone https://github.com/sjoblomj/linux-install-scripts "$HOME"/code/linux-install-scripts
+if [ ! -d "$HOME"/code/linux-install-scripts ]; then
+	git clone https://github.com/sjoblomj/linux-install-scripts "$HOME"/code/linux-install-scripts
+fi
 cd "$HOME"/code/linux-install-scripts
 
 if [ -d ".git/hooks" ]; then

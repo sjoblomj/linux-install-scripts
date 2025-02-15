@@ -4,7 +4,7 @@ source ../common/install.sh
 
 post_addon_letter() {
 	local filename="$HOME/.letters/firefox"
-	local curr_dir=$(pwd)
+	local currdir=$(pwd)
 	mkdir -p $HOME/.letters
 
 	NO_FORMAT="\033[0m"
@@ -14,7 +14,7 @@ post_addon_letter() {
 	C_WHITE="\033[38;5;15m"
 	echo -e "${F_BOLD}${F_UNDERLINED}${C_WHITE}Firefox addons available${NO_FORMAT}" > "$filename"
 	echo -e "${C_WHITE}Run the following command to open recommended addons:${NO_FORMAT}" >> "$filename"
-	echo -e "${C_GREY46}firefox $curr_dir/addons.html${NO_FORMAT}" >> "$filename"
+	echo -e "${C_GREY46}firefox $currdir/addons.html${NO_FORMAT}" >> "$filename"
 }
 
 install_programs git

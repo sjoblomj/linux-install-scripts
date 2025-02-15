@@ -5,7 +5,7 @@ DIR=${1:-'.'}
 COMPONENT=${2:-$(basename $DIR)}
 UPSTREAM=${3:-'@{u}'} # An upstream branch can be passed explicitly
 
-cd $DIR
+cd "$DIR" || exit 1
 
 git fetch > /dev/null
 LOCAL=$( git rev-parse @)
@@ -23,4 +23,4 @@ else
 	echo "Diverged"
 fi
 
-cd $prevdir
+cd "$prevdir" || exit 1

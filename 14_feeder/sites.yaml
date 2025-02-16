@@ -5,6 +5,12 @@ sites:
     parser: youtrack
     description: Issue for when the JetBrains IDEs will get Wayland support.
 
+  - name: labwc - Prevent overflow of A-Tab OSD
+    url:  "https://github.com/labwc/labwc/issues/405"
+    icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
+    parser: github
+    description: Issue to fix Alt+Tab OSD overflow in labwc
+
   - name: labwc Releases
     url:  "https://github.com/labwc/labwc/releases"
     icon: "https://raw.githubusercontent.com/labwc/labwc/17bad48d87f5550dcdd16a03fd95b9bd9ebc73b3/data/labwc.svg"
@@ -31,6 +37,42 @@ sites:
     icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Freedesktop-logo-for-template.svg"
     parser: gitlab
     description: Question to freedesktop.org regarding Type=Scalable
+
+  - name: icon-theme-spec - dubious logic in `DirectorySizeDistance()`
+    url:  "https://gitlab.freedesktop.org/xdg/default-icon-theme/-/issues/19"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/7/7b/Freedesktop-logo-for-template.svg"
+    parser: gitlab
+    description: Question to freedesktop.org regarding directory size determination
+
+  - name: vim-beancount - Support non-ASCII account names
+    url:  "https://github.com/nathangrigg/vim-beancount/pull/70"
+    icon: "https://avatars.githubusercontent.com/u/22910810"
+    parser: github
+    description: Fix to allow non-ASCII account names in vim-beancount. With it, the linux-install-scripts can be updated.
+
+  - name: Ghostty - Search scrollback
+    url:  "https://github.com/ghostty-org/ghostty/issues/189"
+    icon: "https://avatars.githubusercontent.com/u/169223740"
+    parser: github
+    description: Issue to implement scrollback in Ghostty
+
+  - name: Ghostty - goto_split bug
+    url:  "https://github.com/ghostty-org/ghostty/issues/2866"
+    icon: "https://avatars.githubusercontent.com/u/169223740"
+    parser: github
+    description: Issue to fix goto_split bug in Ghostty
+
+  - name: scummvm - Add SDL3 backend
+    url:  "https://github.com/scummvm/scummvm/pull/6312"
+    icon: "https://avatars.githubusercontent.com/u/365181"
+    parser: github
+    description: PR to add SDL backend in scummvm
+
+  - name: mdformat - Thematic breaks should respect wrap length
+    url:  "https://github.com/hukkin/mdformat/pull/504"
+    icon: "https://mdformat.readthedocs.io/en/stable/_images/logo.svg"
+    parser: github
+    description: PR to make thematic breaks respect wrap length in mdformat
 
   - name: Waybar GTK4 branch
     url:  "https://github.com/Alexays/Waybar/issues/2815"
@@ -77,6 +119,16 @@ sites:
     parser: rss
     description: News from the Linux distribution Arch Linux.
 
+  - name: Cooklang Blog
+    url:  "https://cooklang.org/blog/index.xml"
+    displayUrl: "https://cooklang.org/blog/"
+    icon: "https://cooklang.org/images/logo.svg"
+    parser: rss
+    description: Blog about cooklang, tools etc.
+    insertValues:
+      - user: Cooklang
+      - userPicture: "https://cooklang.org/images/logo.svg"
+
   - name: Phoronix
     url:  "https://www.phoronix.com/rss.php"
     displayUrl: "https://www.phoronix.com"
@@ -86,6 +138,41 @@ sites:
     insertValues:
       - user: Michael Larabel
       - userPicture: "https://www.phoronix.com/assets/categories/michaellarabel.webp"
+    insertConditionally:
+      - if:
+        - field: text
+        - or:
+          - field: title
+        - contains:
+          - text: wayland
+        - thenInsert:
+          - userPicture: "https://upload.wikimedia.org/wikipedia/commons/9/99/Wayland_Logo.svg"
+      - if:
+        - field: text
+        - or:
+          - field: title
+        - contains:
+          - text: gimp
+        - thenInsert:
+          - userPicture: "https://raw.githubusercontent.com/GNOME/gimp/de8f7fd4b8e8711d9167bbdd27bd089a39a863b0/icons/Default/scalable/gimp-wilber.svg"
+      - if:
+        - field: text
+        - or:
+          - field: title
+        - contains:
+          - text: firefox
+        - thenInsert:
+          - userPicture: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Firefox_logo%2C_2019.svg"
+      - if:
+        - field: text
+        - or:
+          - field: title
+          - field: apa
+        - contains:
+          - text: arch
+        - thenInsert:
+          - userPicture: "https://gitlab.archlinux.org/uploads/-/system/group/avatar/23/iconfinder_archlinux_386451.png"
+
     filters:
       - filter: wayland
       - or:
@@ -110,6 +197,13 @@ sites:
     icon: "https://files.mastodon.social/accounts/avatars/108/288/607/816/054/957/original/44ef33fd13454e94.png"
     parser: rss
     description: News about open source software.
+    insertConditionally:
+      - if:
+        - field: user
+        - contains:
+          - text: Bobby Borisov
+        - thenInsert:
+          - userPicture: "https://cdn.shortpixel.ai/spai/q_lossy+ret_img+to_auto/linuxiac.com/wp-content/uploads/2022/01/bobby-borisov-linuxiac.jpg"
 
   - name: Marginalia Blog
     url:  "https://www.marginalia.nu/log/index.xml"
@@ -122,11 +216,21 @@ sites:
       - userPicture: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRltBHX69SuFkRdbx0wvjw2_yo3zSP12ZY54kHPap-5cQ&s"
 
   - name: Marginalia Publicity
-    url:  "https://search.marginalia.nu/news.xml"
-    displayUrl: "https://search.marginalia.nu/"
+    url:  "https://old-search.marginalia.nu/news.xml"
+    displayUrl: "https://old-search.marginalia.nu/"
     icon: "https://search.marginalia.nu/favicon.ico"
     parser: rss
     description: Publicity news from the indie search engine Marginalia.
+
+  - name: Two Bit History
+    url:  "https://twobithistory.org/feed.xml"
+    displayUrl: "https://twobithistory.org"
+    icon: "https://raw.githubusercontent.com/sinclairtarget/sinclairtarget.github.io/refs/heads/master/images/logo.png"
+    parser: atom
+    description: Blog on computer history
+    insertValues:
+      - user: Sinclair Target
+      - userPicture: "https://avatars.githubusercontent.com/u/6401947"
 
   - name: Simon Ser's blog
     url: "https://emersion.fr/blog/atom.xml"
@@ -160,6 +264,14 @@ sites:
     icon: "https://raw.githubusercontent.com/OpenRailwayMap/OpenRailwayMap/970bf7e883da00fc5c65d640864fc22b6fe376b1/img/openrailwaymap.svg"
     parser: rss
     description: News from the railway mapping project OpenRailwayMap.
+
+  - name: Fehmarnbelt tunnel
+    url:  "https://femern.com/press/news/"
+    icon: "https://femern.com/dist/femern_apple-touch-icon.png"
+    parser: femern
+    description: News from the project to build a car and railway tunnel between Denmark and Germany.
+    insertValues:
+      - userPicture: "https://femern.com/dist/femern_apple-touch-icon.png"
 
   - name: Ultimate Hacking Keyboard Blog
     url:  "https://ultimatehackingkeyboard.com/feed"
@@ -209,7 +321,7 @@ sites:
   - name: Low←Tech Magazine
     url:  "https://solar.lowtechmagazine.com/posts/index.xml"
     displayUrl: "https://solar.lowtechmagazine.com/archives/"
-    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/XWtt2xKXrOeeIxFqxv90Jpe9YZ0Hjct-j9IGeK6FoqrU3dcwLk4aMrQbOwbDOfo1hAdCIm_ZHQ"
+    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/1ECWc3yuvu-dzh8OE4bENtpvHi3HKKugncuQUCsr26xfb4BT4wbuG4_XGe5_i6iEG-Ml5VQ8=s160-c-k-c0x00ffffff-no-rj"
     parser: rss
     description: Magazine exploring low-tech solutions to societal challenges.
     insertValues:
@@ -240,19 +352,46 @@ sites:
       - userPicture: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
 
   - name: Planet Wild Blog
-    url:  "https://planetwild.com/blog"
+    url:  "https://planetwild.com/blog/rss.xml"
+    displayUrl: "https://planetwild.com/blog"
     icon: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
-    parser: planetwild
+    parser: rss
     description: Blog of Planet Wild, aiming to restore ecosystems.
     insertValues:
+      - user: Planet Wild
       - userPicture: "https://cdn.prod.website-files.com/665f17d0fb4bfc1e811460d0/66a8b28199611411c83fbd2b_logo-medium.svg"
+
+  - name: Auroramålet
+    url:  "https://auroramålet.se/nyheter/"
+    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/NNbUU4fdvs2Lj4AoQL0fXYAnOPV6kC3TwMUEEOAeQJ0n3oyZx43ztKSkMa9mlj7IU40UfpvMVzw=s160-c-k-c0x00ffffff-no-rj"
+    parser: auroramålet
+    description: Organization that is suing the Swedish government for inaction regarding climate change.
+    insertValues:
+      - user: Auroramålet
+      - userPicture: "https://wsrv.nl/?url=yt3.googleusercontent.com/NNbUU4fdvs2Lj4AoQL0fXYAnOPV6kC3TwMUEEOAeQJ0n3oyZx43ztKSkMa9mlj7IU40UfpvMVzw=s160-c-k-c0x00ffffff-no-rj"
 
   - name: Fridays For Future Sweden
     url:  "https://fridaysforfuture.se/feed/"
     displayUrl: "https://fridaysforfuture.se/nyheter/"
-    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.webp"
+    icon: "https://fridaysforfuture.org/wp-content/uploads/2020/03/cropped-FFF_logo_x960-2.png"
     parser: rss
     description: News from the Swedish branch of the climate action group Fridays For Future.
+
+  - name: Clean Energy Wire
+    url:  "https://www.cleanenergywire.org/rss"
+    displayUrl: "https://www.cleanenergywire.org/news"
+    icon: "https://www.cleanenergywire.org/sites/all/themes/cleanenergywire/logo.png"
+    parser: rss
+    description: News about Germany’s effort to become climate friendly.
+
+  - name: Global Solar Council
+    url:  "https://www.globalsolarcouncil.org/news/"
+    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/V1se0tXHZ0lWfnsFqIzlJPb0zt0kdO3X32Z5B7O6aIEdzCZ6QBeJC9a2udUjHwHveMQuBIe5HcU=s160-c-k-c0x00ffffff-no-rj"
+    parser: globalsolarcouncil
+    description: Organization working to advance the use of solar power.
+    insertValues:
+      - user: Global Solar Council
+      - userPicture: "https://wsrv.nl/?url=yt3.googleusercontent.com/V1se0tXHZ0lWfnsFqIzlJPb0zt0kdO3X32Z5B7O6aIEdzCZ6QBeJC9a2udUjHwHveMQuBIe5HcU=s160-c-k-c0x00ffffff-no-rj"
 
   - name: Spårvagnsstäderna
     url:  "https://api.client.notified.com/api/rss/publish/view/3570"
@@ -284,6 +423,15 @@ sites:
     parser: rss
     description: News from the Swedish logistics site Dagens Logistik - Infrastruktur.
 
+  - name: Rail Sweden
+    url:  "https://railsweden.lindholmen.se/sv/nyheter"
+    icon: "https://railsweden.lindholmen.se/sites/default/files/favicon/favicon_96x96.png"
+    parser: railsweden
+    description: News from the Swedish freight railway company Rail Sweden.
+    insertValues:
+      - user: Rail Sweden
+      - userPicture: "https://railsweden.lindholmen.se/sites/default/files/favicon/favicon_96x96.png"
+
   - name: Vesivius Challenge
     url:  "https://scrollprize.substack.com/feed"
     displayUrl: "https://scrollprize.substack.com/"
@@ -301,6 +449,15 @@ sites:
     description: News from the excavation of the viking ship Gjellestadskipet.
     insertValues:
       - userPicture: "https://www.vikingtidsmuseet.no/vrtx/dist/resources/images/favicon.png"
+
+  - name: Folkminnesbloggen
+    url:  "https://www.isof.se/folkminnen/folkminnesbloggen"
+    icon: "https://www.isof.se/images/18.44b3b69f179568601f18d7b2/1623070502588/favicon.ico"
+    parser: isof
+    description: Swedish blog about Nordic folklore, believes and stories.
+    insertValues:
+      - user: ISOF
+      - userPicture: "https://www.isof.se/images/18.44b3b69f179568601f18d7b2/1623070502588/favicon.ico"
 
   - name: Hornbore Ting
     url:  "https://hornboreting.se/feed/"
@@ -335,27 +492,20 @@ sites:
     insertValues:
       - userPicture: "https://images.squarespace-cdn.com/content/v1/5957f58ebe6594dbcffacf91/1510661138870-2J152MO68AOLSWBD0GV8/favicon.ico"
 
-  - name: Saga Farmann Press releases
-    url:  "https://www.sagafarmann.com/pressarchive"
-    icon: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
-    parser: sagafarmann
-    description: News from the viking ship Saga Farmann
-    insertValues:
-      - userPicture: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
-
   - name: Saga Farmann YouTube channel
     url:  "https://www.youtube.com/feeds/videos.xml?channel_id=UCaPUAvRBw0i5ET79TMh2_MQ"
     displayUrl: "https://www.youtube.com/channel/UCaPUAvRBw0i5ET79TMh2_MQ"
-    icon: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
+    icon: "https://wsrv.nl/?url=yt3.googleusercontent.com/7p-10ORSbT9jTzwAqCmOVqp9vrQ31OsBkcz4a91kv16A8blcj44u6GJhKrWtTIQhD8BCCiFn=s160-c-k-c0x00ffffff-no-rj"
     parser: atom
     description: YouTube channel of the viking ship Saga Farmann
     insertValues:
-      - userPicture: "https://www.sagafarmann.com/_next/image?url=%2FSaga_Med_org_page-0001-removebg-preview.png&w=64&q=100"
+      - userPicture: "https://wsrv.nl/?url=yt3.googleusercontent.com/7p-10ORSbT9jTzwAqCmOVqp9vrQ31OsBkcz4a91kv16A8blcj44u6GJhKrWtTIQhD8BCCiFn=s160-c-k-c0x00ffffff-no-rj"
 
   - name: Wardruna
-    url:  "https://wardruna.com/news/"
+    url:  "https://wardruna.com/news/rss.xml"
+    displayUrl: "https://wardruna.com/news/"
     icon: "https://sropr.com/wp-content/uploads/2020/02/logo_wardruna_symbol-web.png"
-    parser: wardruna
+    parser: rss
     description: News from the nordic folk band Wardruna.
     insertValues:
       - user: Wardruna

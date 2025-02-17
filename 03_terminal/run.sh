@@ -14,7 +14,7 @@ alt3="Configure fzf"
 alt4="Install humanlog (log prettifier)"
 alt5="Install jq and yq (command line processor for JSON, YAML, XML, CSV etc)"
 esc="Cancel"
-alts="${alt1}\n${alt2}\n${alt3}\n${alt4}\n${esc}"
+alts="${alt1}\n${alt2}\n${alt3}\n${alt4}\n${alt5}\n${esc}"
 
 while true; do
 	if [ "${alts}" = "${esc}" ]; then

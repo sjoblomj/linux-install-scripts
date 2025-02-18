@@ -26,3 +26,11 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 
 # Disable window preview on Alt+Tab
 gsettings set org.gnome.shell.window-switcher app-icon-mode 'app-icon-only'
+
+# Calendar settings
+gsettings set org.gnome.desktop.calendar show-weekdate true
+if ! grep -sq "^LC_TIME=" ; then
+	echo 'LC_TIME="sv_SE.UTF-8"' | sudo tee /etc/default/locale
+fi
+sudo sed -i 's/^# sv_SE.UTF-8 UTF-8/sv_SE.UTF-8 UTF-8/' /etc/locale.gen
+sudo locale-gen

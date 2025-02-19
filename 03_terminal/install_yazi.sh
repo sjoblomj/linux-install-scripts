@@ -26,6 +26,10 @@ fi
 if ! grep -sq "max_width" "$confdir"/yazi/yazi.toml ; then
 	mkdir -p "$confdir"/yazi
 	echo "
+[manager]
+show_hidden = true
+show_symlink = true
+
 [preview]
 max_width = 4096
 max_height = 4096

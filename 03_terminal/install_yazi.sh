@@ -20,6 +20,7 @@ if [ $(is_ubuntu) -eq 1 ] && [ ! -d "$HOME"/bin/yazi ]; then
 	cd "$prevdir" || exit 1
 	./install_fonts.sh
 else
+	install_programs 7zip # Yazi uses 7zip to preview archives
 	install_programs yazi
 fi
 

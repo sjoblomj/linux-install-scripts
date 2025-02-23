@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=RustRover
+Comment=Rust IDE
+Exec=rustrover
+Icon=jetbrains-rustrover
+Terminal=false
+Categories=Development;IDE
+Keywords=Development;IDE;Rust

@@ -9,10 +9,10 @@
 used_emojis=$(git log --pretty=format:"%s" | awk 'NF>1{print $NF}')
 commit_emoji=$(cat $1 | awk 'NF>1{print $NF}')
 
-if [[ $(sed 's/[a-zA-Z0-9+\-_., ;:]//g' $1) == "" ]]; then
-	echo -e >&2 "\e[1;33mWarning: It looks like no emoji was used\e[0m"
+if [ -z "$(sed 's/[a-zA-Z0-9+\-_., ;:]//g' "$1")" ]; then
+	echo >&2 "\e[1;33mWarning: It looks like no emoji was used\e[0m"
 fi
 if [ "${used_emojis#*"$commit_emoji"}" != "$used_emojis" ]; then
-	echo -e >&2 "\e[1;31mError: The emoji in the commit message has already been used! Unable to commit.\e[0m"
+	echo >&2 "\e[1;31mError: The emoji in the commit message has already been used! Unable to commit.\e[0m"
 	exit 1
 fi

@@ -125,7 +125,7 @@ while [ $change -eq 1 ]; do
 	if [ "${res}" = "${alt1}" ]; then
 		if [ ! -d "$HOME"/bin/wlr-randr ]; then
 			sudo pacman -S --needed jq
-			git clone https://git.sr.ht/\~emersion/wlr-randr "$HOME"/bin/wlr-randr
+			git clone https://gitlab.freedesktop.org/emersion/wlr-randr.git "$HOME"/bin/wlr-randr
 			cd "$HOME"/bin/wlr-randr || exit 1
 			add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
 			meson setup build/

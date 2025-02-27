@@ -17,8 +17,7 @@ res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="
 Wayland is the replacement of the X Window System, but not all applications are Wayland ready.
 Xwayland acts as a workaround, allowing X programs to continue to work under Wayland.
 Xwayland is a complete X11 server, just like Xorg is, but instead of driving the displays and
-opening input devices, it acts as a Wayland client. Notable programs that do not work without
-Xwayland are GIMP 2.x and the Jetbrains IDEs (https://youtrack.jetbrains.com/issue/JBR-3206)')
+opening input devices, it acts as a Wayland client.')
 if [ "${res}" = "${alt1}" ]; then
 	xwayland=""
 	sudo pacman -S --needed xorg-xwayland

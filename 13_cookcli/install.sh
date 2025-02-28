@@ -9,7 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 nvm install 22
 
 if [ ! -d "$HOME"/bin/cookcli ]; then
-git clone https://github.com/cooklang/cookcli.git "$HOME"/bin/cookcli
+	git clone https://github.com/cooklang/cookcli.git "$HOME"/bin/cookcli
 fi
 
 prevdir=$(pwd)
@@ -19,3 +19,12 @@ cd ui || exit 1
 npm install
 npm run build
 cd "$prevdir" || exit 1
+
+# Add to PATH if not present
+if grep -sq "^export PATH=.*cookcli.*" $HOME/.zshrc ; then
+    : # Do nothing, already on the path
+elif grep -sq "^export PATH=" $HOME/.zshrc ; then
+    sed -i "s|^export PATH=|export PATH=$HOME/bin/cookcli/target/release:|" $HOME/.zshrc
+else
+    echo "export PATH=$HOME/bin/cookcli/target/release:\$PATH" >> $HOME/.zshrc
+fi

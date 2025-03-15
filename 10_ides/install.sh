@@ -31,7 +31,7 @@ if ! ls "$HOME"/bin/"$product_dir"-* 1>/dev/null 2>&1 ; then
 	sudo cp -s "$HOME"/bin/"$product_dir"-*/bin/"$prod".sh /usr/local/bin/"$prod"
 	sudo cp jetbrains-"$prod".desktop /usr/share/applications
 
-    # Put icons in their right place
+	# Put icons in their right place
 	if [ $(is_ubuntu) -eq 1 ]; then
 		icontype="png"
 		iconsize="128x128"

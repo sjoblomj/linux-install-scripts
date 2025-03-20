@@ -9,7 +9,7 @@ is_ubuntu() {
 }
 
 install_programs() {
-	if [ $(is_ubuntu) -eq 1 ]; then
+	if [ "$(is_ubuntu)" -eq 1 ]; then
 		sudo apt-get install "$@"
 	else
 		sudo pacman -S --needed "$@"
@@ -17,7 +17,7 @@ install_programs() {
 }
 
 search_package() {
-	if [ $(is_ubuntu) -eq 1 ]; then
+	if [ "$(is_ubuntu)" -eq 1 ]; then
 		apt-cache search "$@"
 	else
 		pacman -Ss "$@"

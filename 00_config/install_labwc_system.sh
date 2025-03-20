@@ -13,7 +13,7 @@ mkdir -p "$confdir"
 alt1="Yes, install Xwayland"
 alt2="No, don't install Xwayland"
 xwayland="-Dxwayland=disabled"
-res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Install Xwayland?"  --header='
+res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Install Xwayland?"  --header='
 Wayland is the replacement of the X Window System, but not all applications are Wayland ready.
 Xwayland acts as a workaround, allowing X programs to continue to work under Wayland.
 Xwayland is a complete X11 server, just like Xorg is, but instead of driving the displays and
@@ -120,7 +120,7 @@ cmd=""
 while [ $change -eq 1 ]; do
 	alt1="Yes, change screen resolution"
 	alt2="No, keep current screen resolution"
-	res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
+	res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
 	if [ "${res}" = "${alt1}" ]; then
 		if [ ! -d "$HOME"/bin/wlr-randr ]; then
 			sudo pacman -S --needed jq
@@ -131,7 +131,7 @@ while [ $change -eq 1 ]; do
 			ninja -C build/
 		fi
 		echo ""
-		read -p "Enter screen scale factor: " factor
+		read -rep "Enter screen scale factor: " factor
 		cmd="\$HOME/bin/wlr-randr/build/wlr-randr --output \$(\$HOME/bin/wlr-randr/build/wlr-randr --json | jq '.[].name' --raw-output) --scale $factor"
 		eval "$cmd"
 	else
@@ -139,18 +139,20 @@ while [ $change -eq 1 ]; do
 	fi
 done
 if [[ -n "$cmd" ]]; then
-	echo "" >> "$HOME"/.zprofile
-	echo "# Set scale factor after startup" >> "$HOME"/.zprofile
-	echo "startuptime=\$(date +%s)" >> "$HOME"/.zprofile
-	echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done" >> "$HOME"/.zprofile
-	echo "$cmd" >> "$HOME"/.zprofile
+	{
+		echo ""
+		echo "# Set scale factor after startup"
+		echo "startuptime=\$(date +%s)"
+		echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done"
+		echo "$cmd"
+	} >> "$HOME"/.zprofile
 fi
 
 
 # Mouse speed
 alt1="Yes, change mouse speed"
 alt2="No, keep current mouse speed"
-res=$(printf "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change mouse speed?" --header='
+res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change mouse speed?" --header='
 Note that this will change the mouse speed for *all devices*.
 For this setting to take effect, a re-login must be performed.')
 if [ "${res}" = "${alt1}" ]; then
@@ -164,6 +166,6 @@ if [ "${res}" = "${alt1}" ]; then
 		sudo ninja install
 	fi
 	echo ""
-	read -p "Enter mouse speed factor: " factor
+	read -rep "Enter mouse speed factor: " factor
 	echo "speed=$factor" | sudo tee /etc/libinput.conf
 fi

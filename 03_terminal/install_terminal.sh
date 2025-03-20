@@ -3,7 +3,7 @@ source ../common/install.sh
 
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 
-if [ $(is_ubuntu) -eq 1 ]; then
+if [ "$(is_ubuntu)" -eq 1 ]; then
 	install_programs terminator
 
 	if ! grep -sq "cursor_blink" "$confdir"/terminator/config ; then
@@ -18,7 +18,7 @@ if [ $(is_ubuntu) -eq 1 ]; then
     use_system_font = False
     font = FiraCode Nerd Font Mono 16
 " >> "$confdir"/terminator/config
-fi
+	fi
 else
 	install_programs ghostty
 	if ! grep -sq "cursor-style-blink" "$confdir"/ghostty/config ; then

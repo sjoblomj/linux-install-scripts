@@ -99,18 +99,17 @@ cp mako_config "$confdir"/mako/config
 sudo pacman -S --needed swaylock swayidle
 if [ ! -d "$HOME"/bin/chayang ]; then
 	git clone https://git.sr.ht/\~emersion/chayang "$HOME"/bin/chayang
-	cd "$HOME"/bin/chayang || exit 1
+	mkdir -p "$HOME"/bin/letters/update_instructions
+	cp build_chayang.sh "$HOME"/bin/letters/update_instructions/chayang
 	add_cronjob_to_check_git_repository "$HOME"/bin/chayang
-	meson setup build/
-	ninja -C build/
-	sudo cp build/chayang /usr/local/bin/
+	./build_chayang.sh
 fi
 if [ ! -d "$HOME"/bin/wlopm ]; then
 	git clone https://git.sr.ht/\~leon_plickat/wlopm "$HOME"/bin/wlopm
-	cd "$HOME"/bin/wlopm || exit 1
+	mkdir -p "$HOME"/bin/letters/update_instructions
+	cp build_wlopm.sh "$HOME"/bin/letters/update_instructions/wlopm
 	add_cronjob_to_check_git_repository "$HOME"/bin/wlopm
-	make
-	sudo make install
+	./build_wlopm.sh
 fi
 
 
@@ -125,10 +124,10 @@ while [ $change -eq 1 ]; do
 		if [ ! -d "$HOME"/bin/wlr-randr ]; then
 			sudo pacman -S --needed jq
 			git clone https://gitlab.freedesktop.org/emersion/wlr-randr.git "$HOME"/bin/wlr-randr
-			cd "$HOME"/bin/wlr-randr || exit 1
+			mkdir -p "$HOME"/bin/letters/update_instructions
+			cp build_wlr-randr.sh "$HOME"/bin/letters/update_instructions/wlr-randr
 			add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
-			meson setup build/
-			ninja -C build/
+			./build_wlr-randr.sh
 		fi
 		echo ""
 		read -rep "Enter screen scale factor: " factor
@@ -158,12 +157,10 @@ For this setting to take effect, a re-login must be performed.')
 if [ "${res}" = "${alt1}" ]; then
 	if [ ! -d "$HOME"/bin/libinput-config ]; then
 		git clone https://gitlab.com/warningnonpotablewater/libinput-config.git "$HOME"/bin/libinput-config
-		cd "$HOME"/bin/libinput-config || exit 1
+		mkdir -p "$HOME"/bin/letters/update_instructions
+		cp build_libinput-config.sh "$HOME"/bin/letters/update_instructions/libinput-config
 		add_cronjob_to_check_git_repository "$HOME"/bin/libinput-config
-		meson setup build/
-		cd build || exit 1
-		ninja
-		sudo ninja install
+		./build_libinput-config.sh
 	fi
 	echo ""
 	read -rep "Enter mouse speed factor: " factor

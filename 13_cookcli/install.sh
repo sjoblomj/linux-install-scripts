@@ -11,15 +11,11 @@ nvm install 22
 
 if [ ! -d "$HOME"/bin/cookcli ]; then
 	git clone https://github.com/cooklang/cookcli.git "$HOME"/bin/cookcli
+	mkdir -p "$HOME"/bin/letters/update_instructions
+	cp build_cookcli.sh "$HOME"/bin/letters/update_instructions/cookcli
+	add_cronjob_to_check_git_repository "$HOME"/bin/cookcli cookcli
 fi
-
-prevdir=$(pwd)
-cd "$HOME"/bin/cookcli || exit 1
-cargo build --release
-cd ui || exit 1
-npm install
-npm run build
-cd "$prevdir" || exit 1
+./build_cookcli.sh
 
 # Add to PATH if not present
 if grep -sq "^export PATH=.*cookcli.*" $HOME/.zshrc ; then

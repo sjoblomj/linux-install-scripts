@@ -17,8 +17,12 @@ add_cronjob_to_check_git_repository() {
 	fi
 
 	mkdir  -p "$HOME"/.letters
-	if [ ! -d "$HOME"/bin/letters ]; then
-		cp -r "$SCRIPT_DIR"/letters "$HOME"/bin
+	mkdir  -p "$HOME"/bin/letters
+	if [ ! -f "$HOME"/bin/letters/empty_letterbox.sh ]; then
+		cp  "$SCRIPT_DIR"/letters/empty_letterbox.sh "$HOME"/bin/letters/empty_letterbox.sh
+	fi
+	if [ ! -f "$HOME"/bin/letters/post_letter.sh ]; then
+		cp  "$SCRIPT_DIR"/letters/post_letter.sh "$HOME"/bin/letters/post_letter.sh
 	fi
 	if ! grep -sq "source \$HOME/bin/letters/empty_letterbox.sh" "$HOME"/.bashrc ; then
 		echo "source \$HOME/bin/letters/empty_letterbox.sh"  >>  "$HOME"/.bashrc

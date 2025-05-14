@@ -2,4 +2,4 @@
 source ../common/menu.sh
 
 menu "Install ImHex (Hex editor)?" \
-    "Yes, install ImHex" './install.sh'
+	"Yes, install ImHex" './install.sh'

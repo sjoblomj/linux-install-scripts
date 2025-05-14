@@ -1,16 +1,17 @@
 #!/bin/bash
-source ../common/install.sh
 source ../common/aliases.sh
+source ../common/install.sh
+source ../common/menu.sh
 
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 
 preview_dir="programs/"
 title="Choose programs to install (Select with Tab)"
-selections=$(ls "$preview_dir" | fzf --multi --layout=reverse --margin=4 --border --border-label="${title}" --preview "cat ${preview_dir}{}" --preview-window right:wrap)
+selections=$(find "$preview_dir" -type f -exec basename {} \; | sort | multi_select_menu "$title" "cat $preview_dir{}")
 
-if [ $(is_ubuntu) -eq 1 ]; then
-	if [ "$selections" != "" ]; then
+if [ "$(is_ubuntu)" -eq 1 ]; then
+	if [ -n "$selections" ]; then
 
 		if [[ "$selections" =~ "bottom" ]]; then
 			install_programs curl
@@ -23,24 +24,24 @@ if [ $(is_ubuntu) -eq 1 ]; then
 			curl -L "$url" -o "$tempfile"
 			sudo dpkg -i "$tempfile"
 			rm "$tempfile"
-			selections=$(echo "${selections}" | sed "s/bottom//g")
+			selections=${selections/bottom/}
 		fi
 		if [[ "$selections" =~ "dust" ]]; then
 			sudo snap install dust
-			selections=$(echo "${selections}" | sed "s/dust//g")
+			selections=${selections/dust/}
 		fi
 		if [[ "$selections" =~ "gtop" ]]; then
 			install_programs npm
 			sudo npm install gtop -g
-			selections=$(echo "${selections}" | sed "s/gtop//g")
+			selections=${selections/gtop/}
 		fi
 		if [[ "$selections" =~ "papers" ]]; then
 			flatpak install flathub org.gnome.Papers
-			selections=$(echo "${selections}" | sed "s/papers//g")
+			selections=${selections/papers/}
 		fi
 		if [[ "$selections" =~ "task" ]]; then
 			install_programs taskwarrior
-			selections=$(echo "${selections}" | sed "s/task//g")
+			selections=${selections/task/}
 		fi
 		if [[ "$selections" =~ "bat" ]]; then
 			make_alias "alias bat='batcat'"
@@ -50,7 +51,7 @@ if [ $(is_ubuntu) -eq 1 ]; then
 	fi
 
 else # Not Ubuntu
-	if [ "$selections" != "" ]; then
+	if [ -n "$selections" ]; then
 		install_programs $selections
 		if [[ "$selections" =~ "vlc" ]]; then
 			install_programs qt5-wayland

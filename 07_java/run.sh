@@ -1,5 +1,6 @@
 #!/bin/bash
 source ../common/install.sh
+source ../common/menu.sh
 
 preview_dir="programs/"
 title="Install Java and tools (Select with Tab)?"
@@ -11,7 +12,7 @@ fi
 javas=$(search_package java | grep -Po "$openjdkpackages" | uniq)
 extras="bazel    (Java build automation tool)\nmaven    (Java build automation tool)\nmvntree  (mvn dependency tree prettifier)"
 
-selection=$(printf "$javas\n$extras" | fzf --multi --tac --margin=4 --border --border-label="${title}" | awk '{print $1;}')
+selection=$(printf "$javas\n$extras" | multi_select_menu "$title" | awk '{print $1;}')
 
 if [ "$selection" != "" ]; then
 	./install.sh "$selection"

@@ -2,10 +2,15 @@
 source ../common/cronjobs.sh
 source ../common/install.sh
 
+install_programs firefox
+mkdir -p "$HOME"/.local/share/icons/hicolor/scalable/apps
+cp firefox.svg "$HOME/.local/share/icons/hicolor/scalable/apps/firefox.svg"
+
+
 post_addon_letter() {
 	local currdir
 	local filename="$HOME/.letters/firefox"
-    currdir=$(pwd)
+	currdir=$(pwd)
 	mkdir -p "$HOME"/.letters
 
 	NO_FORMAT="\033[0m"

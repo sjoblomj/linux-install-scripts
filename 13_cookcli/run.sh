@@ -2,4 +2,4 @@
 source ../common/menu.sh
 
 menu "Install cookcli (receipe tool)?" \
-    "Yes, install cookcli" './install.sh'
+	"Yes, install cookcli" './install.sh'

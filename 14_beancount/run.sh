@@ -2,4 +2,4 @@
 source ../common/menu.sh
 
 menu "Install beancount (Plain text accounting tool)?" \
-    "Yes, install beancount" './install.sh'
+	"Yes, install beancount" './install.sh'

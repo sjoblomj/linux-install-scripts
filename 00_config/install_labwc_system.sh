@@ -1,6 +1,7 @@
 #!/bin/bash
-source ../common/github.sh
 source ../common/cronjobs.sh
+source ../common/github.sh
+source ../common/menu.sh
 
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
@@ -13,7 +14,7 @@ mkdir -p "$confdir"
 alt1="Yes, install Xwayland"
 alt2="No, don't install Xwayland"
 xwayland="-Dxwayland=disabled"
-res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Install Xwayland?"  --header='
+res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Install Xwayland?" '
 Wayland is the replacement of the X Window System, but not all applications are Wayland ready.
 Xwayland acts as a workaround, allowing X programs to continue to work under Wayland.
 Xwayland is a complete X11 server, just like Xorg is, but instead of driving the displays and
@@ -119,7 +120,7 @@ cmd=""
 while [ $change -eq 1 ]; do
 	alt1="Yes, change screen resolution"
 	alt2="No, keep current screen resolution"
-	res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change screen resolution?")
+	res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Change screen resolution?")
 	if [ "${res}" = "${alt1}" ]; then
 		if [ ! -d "$HOME"/bin/wlr-randr ]; then
 			sudo pacman -S --needed jq
@@ -151,7 +152,7 @@ fi
 # Mouse speed
 alt1="Yes, change mouse speed"
 alt2="No, keep current mouse speed"
-res=$(printf "%s" "${alt1}\n${alt2}" | fzf --tac --margin=4 --border --border-label="Change mouse speed?" --header='
+res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Change mouse speed?" '
 Note that this will change the mouse speed for *all devices*.
 For this setting to take effect, a re-login must be performed.')
 if [ "${res}" = "${alt1}" ]; then

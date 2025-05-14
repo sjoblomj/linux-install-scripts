@@ -2,4 +2,4 @@
 source ../common/menu.sh
 
 menu "Install Slack (instant messaging)?" \
-    "Yes, install Slack" './install.sh'
+	"Yes, install Slack" './install.sh'

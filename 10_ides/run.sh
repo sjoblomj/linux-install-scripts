@@ -7,8 +7,8 @@ menu_args=("$title")
 
 for code in "${product_codes[@]}"; do
 	label="Install ${product_names[$code]} (${product_desc[$code]})"
-    cmd="./install.sh $code ${product_dir[$code]}"
-    menu_args+=("$label" "$cmd")
+	cmd="./install.sh $code ${product_dir[$code]}"
+	menu_args+=("$label" "$cmd")
 done
 
 menu "${menu_args[@]}"

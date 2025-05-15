@@ -2,7 +2,7 @@
 Type=Application
 Name=IntelliJ IDEA
 Comment=IDE for developing computer software written in Java, Kotlin, Groovy, and other JVM-based languages
-Exec=idea
+Exec=idea -Dawt.toolkit.name=WLToolkit -Dide.browser.jcef.enabled=false
 Icon=jetbrains-idea
 Categories=Development;IDE
 Keywords=Development;IDE;Java;Kotlin;Groovy;JVM

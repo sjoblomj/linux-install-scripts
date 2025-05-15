@@ -2,7 +2,7 @@
 Type=Application
 Name=CLion
 Comment=A cross-platform IDE for C and C++
-Exec=clion
+Exec=clion -Dawt.toolkit.name=WLToolkit -Dide.browser.jcef.enabled=false
 Icon=jetbrains-clion
 Categories=Development;IDE
 Keywords=Development;IDE;C;C++

@@ -2,7 +2,7 @@
 Type=Application
 Name=RustRover
 Comment=Rust IDE
-Exec=rustrover
+Exec=rustrover -Dawt.toolkit.name=WLToolkit -Dide.browser.jcef.enabled=false
 Icon=jetbrains-rustrover
 Terminal=false
 Categories=Development;IDE

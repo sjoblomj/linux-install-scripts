@@ -2,7 +2,7 @@
 Type=Application
 Name=PyCharm
 Comment=Python IDE
-Exec=pycharm
+Exec=pycharm -Dawt.toolkit.name=WLToolkit -Dide.browser.jcef.enabled=false
 Icon=jetbrains-pycharm
 Terminal=false
 Categories=Development;IDE

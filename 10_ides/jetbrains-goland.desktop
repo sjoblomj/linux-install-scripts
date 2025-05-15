@@ -2,7 +2,7 @@
 Type=Application
 Name=GoLand
 Comment=A Go IDE with extended support for JavaScript, TypeScript, and databases
-Exec=goland
+Exec=goland -Dawt.toolkit.name=WLToolkit -Dide.browser.jcef.enabled=false
 Icon=jetbrains-goland
 Categories=Development;IDE
 Keywords=Development;IDE;Go

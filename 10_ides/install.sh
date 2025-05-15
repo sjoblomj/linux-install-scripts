@@ -7,7 +7,6 @@ product_code="$1"
 product_dir="$2"
 if ! ls "$HOME"/bin/"$product_dir"-* 1>/dev/null 2>&1 ; then
 	install_programs curl tar
-	install_programs xwayland  # No native Wayland support yet   https://youtrack.jetbrains.com/issue/JBR-3206
 	curl -L "https://download.jetbrains.com/product?code=${product_code}&latest&distribution=linux" -o "$product_code".tar.gz
 
 	mkdir -p "$HOME/bin"
@@ -32,7 +31,7 @@ if ! ls "$HOME"/bin/"$product_dir"-* 1>/dev/null 2>&1 ; then
 	sudo cp jetbrains-"$prod".desktop /usr/share/applications
 
 	# Put icons in their right place
-	if [ $(is_ubuntu) -eq 1 ]; then
+	if [ "$(is_ubuntu)" -eq 1 ]; then
 		icontype="png"
 		iconsize="128x128"
 	else

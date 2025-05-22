@@ -15,10 +15,10 @@ BASE=$(git  merge-base @ "$UPSTREAM")
 if [ "$LOCAL" = "$REMOTE" ]; then
 	echo "Up to date"
 elif [ "$LOCAL" = "$BASE" ]; then
-    cmd=""
-    if [ ! -f "$HOME/.letters/update_instructions/$COMPONENT" ]; then
-        cmd="cd $DIR && git pull && cd -"
-    fi
+	cmd=""
+	if [ ! -f "$HOME/bin/letters/update_instructions/$COMPONENT" ]; then
+		cmd="cd $DIR && git pull && cd -"
+	fi
 	"$HOME"/bin/letters/post_letter.sh "$HOME/.letters/$COMPONENT" "$COMPONENT" "$cmd"
 	echo "Need to pull"
 elif [ "$REMOTE" = "$BASE" ]; then

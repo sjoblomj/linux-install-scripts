@@ -4,8 +4,14 @@ component="$2"
 cmd="$3"
 if [ -z "$cmd" ]; then
 	SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-	if [ -f "$SCRIPT_DIR"/update_instructions/"$component" ]; then
-		cmd=$(cat "$SCRIPT_DIR"/update_instructions/"$component")
+	file="$SCRIPT_DIR"/update_instructions/"$component"
+
+	if [ -f "$file" ]; then
+		if read -r first_line < "$file" && [[ $first_line == \#!* ]]; then #Remove line with shebang if present
+			cmd=$(tail -n +2 "$file")
+		else
+			cmd=$(cat "$file")
+		fi
 	else
 		cmd="No command provided"
 	fi

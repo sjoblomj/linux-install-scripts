@@ -19,6 +19,7 @@ if [ "$(is_ubuntu)" -eq 1 ]; then
     font = FiraCode Nerd Font Mono 16
 " >> "$confdir"/terminator/config
 	fi
+
 else
 	install_programs ghostty
 	if ! grep -sq "cursor-style-blink" "$confdir"/ghostty/config ; then

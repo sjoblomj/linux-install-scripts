@@ -25,7 +25,7 @@ if [ "${res}" = "${alt1}" ]; then
 fi
 
 sudo pacman -S --needed git jq
-sudo pacman -S --needed wlroots wayland libinput libxkbcommon libxml2 cairo pango glib2
+sudo pacman -S --needed wlroots wayland libinput libxkbcommon libxml2 cairo pango glib2 seatd
 sudo pacman -S --needed meson ninja gcc wayland-protocols
 sudo pacman -S --needed polkit
 

@@ -40,6 +40,7 @@ cp autostart environment menu.xml rc.xml themerc-override "$confdir"/labwc
 cp .zprofile "$HOME"/
 sed -i "s|./bin/labwc/build/labwc|${labwc_path// /\\\\ }/build/labwc|" "$HOME"/.zprofile
 sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
+./download_icons.sh
 
 
 # Internet Wireless Daemon

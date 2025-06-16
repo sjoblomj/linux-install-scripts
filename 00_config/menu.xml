@@ -1,49 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <openbox_menu>
-	<menu id="root-menu">
-		<item label="Run program...">
+	<menu id="root-menu" showIcons="yes">
+		<item label="Run program..." icon="rocket">
 			<action name="Execute">
 				<command>fuzzel --dpi-aware yes</command>
 			</action>
 		</item>
-		<item label="Terminal">
+		<item label="Terminal" icon="terminal">
 			<action name="Execute">
 				<command>ghostty</command>
 			</action>
 		</item>
-		<menu id="screenshot-menu" label="Screenshots">
-			<item label="Screenshot of whole screen">
+		<menu id="screenshot-menu" label="Screenshots" icon="camera">
+			<item label="Whole screen" icon="camera">
 				<action name="Execute">
 					<command>sh -c 'grim - | swappy -f -'</command>
 				</action>
 			</item>
-			<item label="Screenshot of part of the screen">
+			<item label="Part of the screen" icon="screenshot">
 				<action name="Execute">
 					<command>sh -c 'grim -g "`slurp`" - | swappy -f -'</command>
 				</action>
 			</item>
-			<item label="Screenshot of whole screen in 5s">
+			<item label="Whole screen in 5s" icon="clock">
 				<action name="Execute">
 					<command>sh -c 'sleep 5 &amp;&amp; grim - | swappy -f -'</command>
 				</action>
 			</item>
 		</menu>
 		<separator />
-		<item label="Exit labwc">
+		<item label="Exit labwc" icon="labwc">
 			<action name="Exit" />
 		</item>
-		<item label="Lock screen">
+		<item label="Lock screen" icon="lock">
 			<action name="Execute">
 				<command>swaylock -f -c 000000</command>
 			</action>
 		</item>
-		<item label="Reboot">
+		<item label="Reboot" icon="reboot">
 			<action name="Execute">
 				<command>reboot</command>
 			</action>
 		</item>
-		<item label="Shut down">
+		<item label="Shut down" icon="shutdown">
 			<action name="Execute">
 				<command>systemctl -i poweroff</command>
 			</action>

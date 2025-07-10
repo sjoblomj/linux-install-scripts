@@ -25,3 +25,7 @@ if [ -d "$HOME"/.vim_runtime ] && [ ! -d "$HOME"/.vim_runtime/my_plugins/vim-coo
 	git clone https://github.com/luizribeiro/vim-cooklang.git "$HOME"/.vim_runtime/my_plugins/vim-cooklang
 	add_cronjob_to_check_git_repository "$HOME"/.vim_runtime/my_plugins/vim-cooklang vim-cooklang
 fi
+
+currdir=$(pwd)
+mkdir -p "$HOME"/.config/cook
+ln -sf "$currdir"/aisle.conf "$HOME"/.config/cook/aisle.conf

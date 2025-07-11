@@ -29,18 +29,18 @@ sudo pacman -S --needed wlroots wayland libinput libxkbcommon libxml2 cairo pang
 sudo pacman -S --needed meson ninja gcc wayland-protocols
 sudo pacman -S --needed polkit
 
-labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc")
-
-cd "$labwc_path" || exit 1
-meson setup "${xwayland}" build/
-meson compile -C build/
 mkdir -p "$confdir"/labwc
 cd "$HOME"/code/linux-install-scripts/00_config || exit 1
 cp autostart environment menu.xml rc.xml themerc-override "$confdir"/labwc
 cp .zprofile "$HOME"/
-sed -i "s|./bin/labwc/build/labwc|${labwc_path// /\\\\ }/build/labwc|" "$HOME"/.zprofile
 sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
 ./download_icons.sh
+
+mkdir -p "$HOME"/bin/letters/update_instructions
+cp build_labwc.sh "$HOME"/bin/letters/update_instructions/labwc
+add_cronjob_to_check_git_releases labwc "labwc/labwc" "$HOME"/bin/labwc "echo \$LABWC_VER"
+labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc")
+./build_labwc.sh "$xwayland" "$labwc_path"
 
 
 # Internet Wireless Daemon
@@ -84,7 +84,6 @@ curl https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Expl0393_-_Flickr
 
 # Extra fonts
 sudo pacman -S --needed otf-font-awesome cantarell-fonts adobe-source-code-pro-fonts ttf-dejavu ttf-liberation noto-fonts ttf-fira-code
-
 
 
 # Screenshot tools

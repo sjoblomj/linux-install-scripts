@@ -40,7 +40,7 @@ mkdir -p "$HOME"/bin/letters/update_instructions
 cp build_labwc.sh "$HOME"/bin/letters/update_instructions/labwc
 add_cronjob_to_check_git_releases labwc "labwc/labwc" "$HOME"/bin/labwc "echo \$LABWC_VER"
 labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc")
-./build_labwc.sh "$xwayland" "$labwc_path"
+./build_labwc.sh "$labwc_path" "$xwayland"
 
 
 # Internet Wireless Daemon

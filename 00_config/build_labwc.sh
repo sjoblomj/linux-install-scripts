@@ -5,4 +5,4 @@ cd "$labwc_path" || exit 1
 meson setup "$args" build/
 meson compile -C build/
 cd - || exit 1
-sed -i '/XDG_VTNR/s|\(&&\).*|\1 '"$labwc_path"'/build/labwc \&|' "$HOME/.zprofile"
+sed -i '/XDG_VTNR/s|\(&&.*&&\).*|\1 '"$labwc_path"'/build/labwc \&|' "$HOME/.zprofile"

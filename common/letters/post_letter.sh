@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 filename="$1"
 component="$2"
 cmd="$3"

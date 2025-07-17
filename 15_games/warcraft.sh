@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -e
 
 sudo pacman -S --needed python python-pip cmake sdl2 sdl2_mixer sdl2_image lua51 tolua++ libtheora libvorbis libogg libmng libpng zlib lldb gdb
 prevdir=$(pwd)

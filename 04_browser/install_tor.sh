@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/install.sh
 
 install_programs torbrowser-launcher

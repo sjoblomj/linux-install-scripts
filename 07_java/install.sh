@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/aliases.sh
 source ../common/cronjobs.sh
 source ../common/install.sh

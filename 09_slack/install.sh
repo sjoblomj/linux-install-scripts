@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 prevdir=$(pwd)
 
 sudo pacman -S --needed git base-devel

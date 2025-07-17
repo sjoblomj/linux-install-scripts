@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ ! -d $HOME/code/feeder ]; then
 	git clone https://github.com/sjoblomj/feeder.git $HOME/code/feeder

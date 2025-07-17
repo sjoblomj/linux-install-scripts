@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 scripts=$(find -name 'run.sh' | sort)
 for s in $scripts; do

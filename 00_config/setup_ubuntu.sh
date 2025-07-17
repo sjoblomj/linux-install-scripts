@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/cronjobs.sh
 
 post_wayland_letter() {

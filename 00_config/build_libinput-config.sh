@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 prevdir=$(pwd)
 cd "$HOME"/bin/libinput-config || exit 1
 git pull

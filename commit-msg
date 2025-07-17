@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 #
 # A hook script to check the commit log message.
 # Called by "git commit" with one argument, the name of the file

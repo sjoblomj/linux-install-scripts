@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/install.sh
 
 if [ $(is_ubuntu) -eq 1 ]; then

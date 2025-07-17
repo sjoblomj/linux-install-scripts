@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ ! -d $HOME/games/settlers2 ]; then
 	prevdir=$(pwd)

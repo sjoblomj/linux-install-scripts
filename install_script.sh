@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+exec > >(tee -a "$HOME/system_installation_logs.log") 2>&1
 
 is_ubuntu() {
 	if [ "$(awk -F= '/^NAME/{gsub("\"", "", $2); print $2}' /etc/os-release)" = "Ubuntu" ]; then
@@ -8,7 +10,7 @@ is_ubuntu() {
 	fi
 }
 
-if [ $(is_ubuntu) -eq 1 ]; then
+if [ "$(is_ubuntu)" -eq 1 ]; then
 	sudo apt-get update
 	sudo apt-get upgrade
 	sudo apt-get install curl git
@@ -24,7 +26,7 @@ if [ ! -d "$HOME"/bin/fzf ]; then
 fi
 cd "$HOME"/bin/fzf
 ./install
-PATH="${PATH:+${PATH}:}"$HOME"/bin/fzf/bin"
+PATH="${PATH:+${PATH}:}$HOME/bin/fzf/bin"
 
 if [ ! -d "$HOME"/code/linux-install-scripts ]; then
 	git clone https://github.com/sjoblomj/linux-install-scripts "$HOME"/code/linux-install-scripts

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/cronjobs.sh
 source ../common/github.sh
 source ../common/menu.sh

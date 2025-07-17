@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/menu.sh
 
 menu "Install PDF tools and typesetting systems?" \

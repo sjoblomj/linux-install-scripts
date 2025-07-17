@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 make_alias() {
 	alias="$1"

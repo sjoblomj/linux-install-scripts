@@ -1,4 +1,5 @@
 #!/bin/zsh
+set -e
 
 product_codes=()
 product_codes+=("IIU")

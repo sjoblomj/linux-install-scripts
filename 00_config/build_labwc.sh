@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 labwc_path="${1:-find "$HOME"/bin/labwc -maxdepth 1 -type d | sort -V | tail -n 1}"
 args="$2" # Additional arguments for meson setup
 cd "$labwc_path" || exit 1

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 is_ubuntu() {
 	if [ "$(awk -F= '/^NAME/{gsub("\"", "", $2); print $2}' /etc/os-release)" = "Ubuntu" ]; then

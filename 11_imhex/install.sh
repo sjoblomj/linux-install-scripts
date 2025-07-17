@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/install.sh
 
 prevdir=$(pwd)

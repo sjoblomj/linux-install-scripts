@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 get_latest_release_data() {
 	local githubrepo="$1"

@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/menu.sh
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 

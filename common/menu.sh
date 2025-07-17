@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # Creates a menu with the given title. Accepts argument pairs of labels and commands.
 # When the user choses a label, the corresponding command is executed.

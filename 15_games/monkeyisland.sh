@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 if [ ! -d $HOME/games/the_secret_of_monkey_island ]; then
 	mkdir -p $HOME/games/the_secret_of_monkey_island

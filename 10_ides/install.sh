@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/install.sh
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"

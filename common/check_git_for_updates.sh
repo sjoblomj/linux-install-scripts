@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 prevdir=$(pwd)
 
 DIR=${1:-'.'}

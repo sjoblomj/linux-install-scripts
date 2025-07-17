@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 confdir="${XDG_CONFIG_HOME:-$HOME/.config}"
 datadir="${XDG_DATA_HOME:-$HOME/.local/share}"
 

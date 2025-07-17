@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 function add_to_path_if_not_present() {
 	path_to_add="$1"

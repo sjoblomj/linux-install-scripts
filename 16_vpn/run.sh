@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 source ../common/menu.sh
 
 menu "Setup Mullvad (VPN)?" \

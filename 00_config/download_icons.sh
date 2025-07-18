@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-# This script downloads icons that are referred to from the labwc menu
+echo "Downloading icons for labwc menu..."
 
 target="$HOME"/.local/share/icons/hicolor/scalable/actions
 mkdir -p "$target"

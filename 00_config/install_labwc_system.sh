@@ -115,56 +115,22 @@ if [ ! -d "$HOME"/bin/wlopm ]; then
 fi
 
 
-# Screen resolution
-change=1
-cmd=""
-while [ $change -eq 1 ]; do
-	alt1="Yes, change screen resolution"
-	alt2="No, keep current screen resolution"
-	res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Change screen resolution?")
-	if [ "${res}" = "${alt1}" ]; then
-		if [ ! -d "$HOME"/bin/wlr-randr ]; then
-			sudo pacman -S --needed jq
-			git clone https://gitlab.freedesktop.org/emersion/wlr-randr.git "$HOME"/bin/wlr-randr
-			mkdir -p "$HOME"/bin/letters/update_instructions
-			cp build_wlr-randr.sh "$HOME"/bin/letters/update_instructions/wlr-randr
-			add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
-			./build_wlr-randr.sh
-		fi
-		echo ""
-		read -rep "Enter screen scale factor: " factor
-		cmd="\$HOME/bin/wlr-randr/build/wlr-randr --output \$(\$HOME/bin/wlr-randr/build/wlr-randr --json | jq '.[].name' --raw-output) --scale $factor"
-		eval "$cmd"
-	else
-		change=0
-	fi
-done
-if [[ -n "$cmd" ]]; then
-	{
-		echo ""
-		echo "# Set scale factor after startup"
-		echo "startuptime=\$(date +%s)"
-		echo "while [[ \$((startuptime + 5)) -gt \$(date +%s) ]] && [[ -z \$LABWC_PID ]]; do sleep 0.1; done"
-		echo "$cmd"
-	} >> "$HOME"/.zprofile
-fi
+post_letter() {
+    local feature="$1"
+    local cmd="$2"
+    local filename="$HOME/.letters/${feature// /_}"
+    mkdir -p "$HOME"/.letters
+
+    NO_FORMAT="\033[0m"
+    F_BOLD="\033[1m"
+    F_UNDERLINE="\033[4m"
+    C_GREY46="\033[38;5;243m"
+    C_WHITE="\033[38;5;15m"
+    echo -e "${F_BOLD}${F_UNDERLINE}${C_WHITE}Change $feature${NO_FORMAT}" > "$filename"
+    echo -e "${C_WHITE}Run the following command to change $feature:${NO_FORMAT}" >> "$filename"
+    echo -e "${C_GREY46}$cmd${NO_FORMAT}" >> "$filename"
+}
 
 
-# Mouse speed
-alt1="Yes, change mouse speed"
-alt2="No, keep current mouse speed"
-res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Change mouse speed?" '
-Note that this will change the mouse speed for *all devices*.
-For this setting to take effect, a re-login must be performed.')
-if [ "${res}" = "${alt1}" ]; then
-	if [ ! -d "$HOME"/bin/libinput-config ]; then
-		git clone https://gitlab.com/warningnonpotablewater/libinput-config.git "$HOME"/bin/libinput-config
-		mkdir -p "$HOME"/bin/letters/update_instructions
-		cp build_libinput-config.sh "$HOME"/bin/letters/update_instructions/libinput-config
-		add_cronjob_to_check_git_repository "$HOME"/bin/libinput-config
-		./build_libinput-config.sh
-	fi
-	echo ""
-	read -rep "Enter mouse speed factor: " factor
-	echo "speed=$factor" | sudo tee /etc/libinput.conf
-fi
+post_letter "screen resolution" "$HOME/code/linux-install-scripts/00_config/change_screen_resolution.sh"
+post_letter "mouse speed"       "$HOME/code/linux-install-scripts/00_config/change_mouse_speed.sh"

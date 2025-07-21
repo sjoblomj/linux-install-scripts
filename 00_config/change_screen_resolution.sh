@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e
+prevdir="$(pwd)"
+cd "$(dirname "$(readlink -f "$0")")" || exit 1
+
 source ../common/cronjobs.sh
 source ../common/menu.sh
 
@@ -11,13 +14,12 @@ while [ $change -eq 1 ]; do
 	res=$(printf "%s\n%s" "$alt1" "$alt2" | select_menu "Change screen resolution?")
 	if [ "${res}" = "${alt1}" ]; then
 		if [ ! -d "$HOME"/bin/wlr-randr ]; then
-			scriptdir=$(readlink -f "$0")
 			sudo pacman -S --needed jq
 			git clone https://gitlab.freedesktop.org/emersion/wlr-randr.git "$HOME"/bin/wlr-randr
 			mkdir -p "$HOME"/bin/letters/update_instructions
-			cp "$scriptdir"/build_wlr-randr.sh "$HOME"/bin/letters/update_instructions/wlr-randr
+			cp build_wlr-randr.sh "$HOME"/bin/letters/update_instructions/wlr-randr
 			add_cronjob_to_check_git_repository "$HOME/bin/wlr-randr"
-			"$scriptdir"/build_wlr-randr.sh
+			./build_wlr-randr.sh
 		fi
 		echo ""
 		read -rep "Enter screen scale factor: " factor
@@ -36,3 +38,4 @@ if [[ -n "$cmd" ]]; then
 		echo "$cmd"
 	} >> "$HOME"/.zprofile
 fi
+cd "$prevdir" || exit 1

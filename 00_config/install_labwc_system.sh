@@ -26,9 +26,10 @@ if [ "${res}" = "${alt1}" ]; then
 fi
 
 sudo pacman -S --needed git jq
-sudo pacman -S --needed wlroots0.19 wayland libinput libxkbcommon libxml2 cairo pango glib2 seatd
+sudo pacman -S --needed wlroots0.19 wayland libinput libxkbcommon libxml2 cairo pango glib2 libpng
+sudo pacman -S --needed librsvg
 sudo pacman -S --needed meson ninja gcc wayland-protocols
-sudo pacman -S --needed polkit
+sudo pacman -S --needed polkit seatd
 
 mkdir -p "$confdir"/labwc
 cd "$HOME"/code/linux-install-scripts/00_config || exit 1

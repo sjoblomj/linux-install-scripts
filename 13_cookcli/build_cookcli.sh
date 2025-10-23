@@ -4,9 +4,8 @@
 	prevdir=$(pwd)
 	cd "$HOME"/bin/cookcli || exit 1
 	git pull
-	cargo build --release
-	cd ui || exit 1
 	npm install
-	npm run build
+	npm run build-css
+	cargo build --release
 	cd "$prevdir" || exit 1
 )

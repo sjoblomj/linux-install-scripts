@@ -41,9 +41,9 @@ add_cronjob_to_check_git_repository() {
 
 add_cronjob_to_check_git_releases() {
 	local COMPONENT="$1"
- 	local GITHUBREPO="$2"
- 	local TARGETDIR="$3"
- 	local VERSION_CMD="$4"
+	local GITHUBREPO="$2"
+	local TARGETDIR="$3"
+	local VERSION_CMD="$4"
 
 	setup_letters_and_cronjobs
 

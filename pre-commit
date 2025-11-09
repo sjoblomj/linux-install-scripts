@@ -1,0 +1,47 @@
+#!/bin/sh
+set -e
+#
+# A hook script to verify what is about to be committed.
+# Called by "git commit" with no arguments. The hook should
+# exit with non-zero status after issuing an appropriate message
+# if it wants to stop the commit.
+
+# Check if any added or modified files contain leading spaces instead of tabs
+files_with_spaces=""
+
+# Get list of files that are staged for commit (added or modified)
+for file in $(git diff --cached --name-only --diff-filter=AM); do
+	# Skip binary files and files that don't exist (deleted files)
+	if [ -f "$file" ] && git diff --cached --numstat "$file" | grep -qv '^-'; then
+		# Check if file has lines with leading spaces (indentation)
+		# This looks for lines starting with spaces (but not empty lines)
+		if git --no-pager diff --no-ext-diff --cached "$file" | grep -E '^\+[ ]+[^ ]' > /dev/null 2>&1; then
+			files_with_spaces="$files_with_spaces\n  - $file"
+		fi
+	fi
+done
+
+# If files with space indentation were found, prompt the user
+if [ -n "$files_with_spaces" ]; then
+	printf >&2 "\e[1;33mWarning: The following files contain lines indented with spaces:\e[0m\n"
+	printf >&2 "%b\n" "$files_with_spaces"
+	printf >&2 "\n\e[1;33mThis project uses tabs for indentation.\e[0m\n"
+	printf >&2 "\e[1;33mDo you want to proceed with the commit anyway? (y/N)\e[0m "
+
+	# Read user input
+	exec < /dev/tty
+	read -r response
+
+	case "$response" in
+		[yY][eE][sS]|[yY])
+			printf >&2 "\e[1;32mProceeding with commit...\e[0m\n"
+			exit 0
+			;;
+		*)
+			printf >&2 "\e[1;31mCommit aborted. Please fix indentation and try again.\e[0m\n"
+			exit 1
+			;;
+	esac
+fi
+
+exit 0

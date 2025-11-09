@@ -34,8 +34,8 @@ fi
 cd "$HOME"/code/linux-install-scripts
 
 if [ -d ".git/hooks" ]; then
-	cp commit-msg .git/hooks
-	chmod +x .git/hooks/commit-msg
+	cp commit-msg pre-commit .git/hooks
+	chmod +x .git/hooks/commit-msg .git/hooks/pre-commit
 fi
 
 

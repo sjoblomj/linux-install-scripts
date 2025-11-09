@@ -38,11 +38,11 @@ download_latest_release_from_github() {
 
 check_for_update() {
 	local component="$1"
- 	local githubrepo="$2"
- 	local targetdir="$3"
- 	local versioncmd="$4"
- 	local version
- 	version="$(eval "$versioncmd")"
+	local githubrepo="$2"
+	local targetdir="$3"
+	local versioncmd="$4"
+	local version
+	version="$(eval "$versioncmd")"
 
 	latestreleasedata=$(get_latest_release_data "$githubrepo")
 	latestreleasename=$(echo "$latestreleasedata" | jq -r '.name')

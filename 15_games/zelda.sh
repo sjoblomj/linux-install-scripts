@@ -39,13 +39,13 @@ if [ ! -d "$HOME"/games/zelda-a_link_to_the_past ]; then
 	#python3 -m pip install -r requirements.txt
 	sudo pacman -S --needed sdl2 python-pillow python-yaml
 
-    # Correct wrong arguments
-    sed -i 's/void VWF_RenderSingle();/void VWF_RenderSingle(int c);/' src/messaging.h
-    sed -i 's/g_zenv.ppu = ppu_init(NULL);/g_zenv.ppu = ppu_init();/' src/zelda_rtl.c
-    sed -i 's/snes->ppu = ppu_init(snes);/snes->ppu = ppu_init();/' snes/snes.c
+	# Correct wrong arguments
+	sed -i 's/void VWF_RenderSingle();/void VWF_RenderSingle(int c);/' src/messaging.h
+	sed -i 's/g_zenv.ppu = ppu_init(NULL);/g_zenv.ppu = ppu_init();/' src/zelda_rtl.c
+	sed -i 's/snes->ppu = ppu_init(snes);/snes->ppu = ppu_init();/' snes/snes.c
 
-    # Build
-    make
+	# Build
+	make
 
 	sed -i "s/^Autosave = 0/Autosave = 1/" "$HOME"/games/zelda-a_link_to_the_past/zelda3/zelda3.ini
 	sed -i "s/^Fullscreen = 0/Fullscreen = 1/" "$HOME"/games/zelda-a_link_to_the_past/zelda3/zelda3.ini

@@ -117,19 +117,19 @@ fi
 
 
 post_letter() {
-    local feature="$1"
-    local cmd="$2"
-    local filename="$HOME/.letters/${feature// /_}"
-    mkdir -p "$HOME"/.letters
+	local feature="$1"
+	local cmd="$2"
+	local filename="$HOME/.letters/${feature// /_}"
+	mkdir -p "$HOME"/.letters
 
-    NO_FORMAT="\033[0m"
-    F_BOLD="\033[1m"
-    F_UNDERLINE="\033[4m"
-    C_GREY46="\033[38;5;243m"
-    C_WHITE="\033[38;5;15m"
-    echo -e "${F_BOLD}${F_UNDERLINE}${C_WHITE}Change $feature${NO_FORMAT}" > "$filename"
-    echo -e "${C_WHITE}Run the following command to change $feature:${NO_FORMAT}" >> "$filename"
-    echo -e "${C_GREY46}$cmd${NO_FORMAT}" >> "$filename"
+	NO_FORMAT="\033[0m"
+	F_BOLD="\033[1m"
+	F_UNDERLINE="\033[4m"
+	C_GREY46="\033[38;5;243m"
+	C_WHITE="\033[38;5;15m"
+	echo -e "${F_BOLD}${F_UNDERLINE}${C_WHITE}Change $feature${NO_FORMAT}" > "$filename"
+	echo -e "${C_WHITE}Run the following command to change $feature:${NO_FORMAT}" >> "$filename"
+	echo -e "${C_GREY46}$cmd${NO_FORMAT}" >> "$filename"
 }
 
 

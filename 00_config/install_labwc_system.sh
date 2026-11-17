@@ -26,7 +26,7 @@ if [ "${res}" = "${alt1}" ]; then
 fi
 
 sudo pacman -S --needed git jq
-sudo pacman -S --needed wlroots0.19 wayland libinput libxkbcommon libxml2 cairo pango glib2 libpng
+sudo pacman -S --needed wlroots0.20 wayland libinput libxkbcommon libxml2 cairo pango glib2 libpng
 sudo pacman -S --needed librsvg
 sudo pacman -S --needed meson ninja gcc wayland-protocols
 sudo pacman -S --needed polkit seatd
@@ -40,9 +40,9 @@ sed -i "s|\$HOME/.config|$confdir|g" "$confdir"/labwc/autostart
 
 mkdir -p "$HOME"/bin/letters/update_instructions
 cp build_labwc.sh "$HOME"/bin/letters/update_instructions/labwc
-add_cronjob_to_check_git_releases labwc "labwc/labwc" "$HOME"/bin/labwc "echo \$LABWC_VER"
+add_cronjob_to_check_git_releases labwc "labwc/labwc" "$HOME"/bin/labwc 'ls $HOME/bin/labwc | sort -V | tail -n 1'
 labwc_path=$(download_latest_release_from_github "labwc/labwc" "$HOME/bin/labwc")
-./build_labwc.sh "$labwc_path" "$xwayland"
+./build_labwc.sh "$labwc_path" $xwayland
 
 
 # Internet Wireless Daemon

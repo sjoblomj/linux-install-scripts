@@ -52,5 +52,5 @@ add_cronjob_to_check_git_releases() {
 		echo "check_for_update \"\$1\" \"\$2\" \"\$3\" \"\$4\"" >> "$HOME"/bin/check_github_releases_for_updates.sh
 	fi
 
-	(crontab -l 2>/dev/null; echo "0 */2 * * * $HOME/bin/check_github_releases_for_updates.sh $COMPONENT $GITHUBREPO $TARGETDIR $VERSION_CMD") | crontab -
+	(crontab -l 2>/dev/null; echo "0 */2 * * * $HOME/bin/check_github_releases_for_updates.sh $COMPONENT $GITHUBREPO $TARGETDIR '$VERSION_CMD'") | crontab -
 }

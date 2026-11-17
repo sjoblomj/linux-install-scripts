@@ -4,6 +4,10 @@ XDG_CURRENT_DESKTOP=wlroots
 # Set keyboard layout to Swedish
 XKB_DEFAULT_LAYOUT=se
 
+# On the Swedish layout, ` and ~ are dead keys, and GTK 4 no longer handles
+# dead keys by itself on Wayland when no input method is running. Fix:
+GTK_IM_MODULE=simple
+
 # For Java applications such as JetBrains/Intellij Idea, set this variable
 # to avoid menus with incorrect offset and blank windows
 # See https://github.com/swaywm/sway/issues/595

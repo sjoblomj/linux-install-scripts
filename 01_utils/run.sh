@@ -59,7 +59,10 @@ else # Not Ubuntu
 			mkdir -p "$datadir"/icons/hicolor/scalable/apps
 			curl https://upload.wikimedia.org/wikipedia/commons/e/e6/VLC_Icon.svg -o "$datadir"/icons/hicolor/scalable/apps/vlc.svg
 		fi
-		if [[ "$selections" =~ "lximage-qt" ]]; then
+		if [[ "$selections" =~ "mpv" ]]; then
+            xdg-mime default mpv.desktop "video/webm"
+        fi
+        if [[ "$selections" =~ "lximage-qt" ]]; then
 			install_programs qt6-wayland qt6-imageformats kimageformats
 			install_programs deepin-icon-theme
 			mkdir  -p "$confdir"/lximage-qt
